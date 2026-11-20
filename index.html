@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Mert Lafcı, independent developer. Meridyen Terapi Asistanı on iOS and Android, plus two open-source Mac tools: HiFi Companion and PocketPaste." />
-  <title>Mert Lafcı</title>
+  <title>Mert Lafcı · Independent Developer</title>
+  <link rel="canonical" href="https://mertlafci.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mertlafci.com/" />
   <meta property="og:title" content="Mert Lafcı · Independent Developer" />
@@ -13,12 +14,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d5c63'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --ink: #1a2b2e;
       --ink-soft: #3d5559;
-      --muted: #5c7276;
+      --muted: #4f6468;
       --paper: #f7f4ef;
       --sky: #dceaf0;
       --teal: #0d5c63;
@@ -118,13 +120,28 @@
     }
 
     .nav {
-      display: none;
+      display: flex;
       gap: 1.1rem;
     }
 
-    @media (min-width: 640px) {
+    @media (max-width: 639px) {
+      .topbar-inner {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+      }
+
+      .topbar-right {
+        display: contents;
+      }
+
       .nav {
-        display: flex;
+        order: 3;
+        width: 100%;
+        gap: 1.25rem;
+      }
+
+      .nav a {
+        padding: 0.2rem 0;
       }
     }
 
@@ -178,10 +195,17 @@
     /* —— Hero —— */
     .hero {
       padding: clamp(3.5rem, 12vw, 6.5rem) 0 clamp(3rem, 8vw, 4.5rem);
-      min-height: min(88vh, 42rem);
+      min-height: min(78vh, 38rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    @media (max-width: 639px) {
+      .hero {
+        min-height: 0;
+        padding-top: 2.5rem;
+      }
     }
 
     .hero-brand {
@@ -302,13 +326,13 @@
       font-size: 1.05rem;
     }
 
-    .reveal {
+    .js .reveal {
       opacity: 0;
       transform: translateY(18px);
       transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
     }
 
-    .reveal.is-visible {
+    .js .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -373,6 +397,13 @@
       color: var(--muted);
       font-size: 0.95rem;
       max-width: 36rem;
+    }
+
+    .app-meta {
+      margin: 0.85rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .app-tech {
@@ -532,7 +563,7 @@
       .hero-role,
       .hero-vision,
       .hero-cta,
-      .reveal {
+      .js .reveal {
         animation: none;
         opacity: 1;
         transform: none;
@@ -546,12 +577,12 @@
     <div class="wrap topbar-inner">
       <a class="wordmark" href="#top">Mert Lafcı</a>
       <div class="topbar-right">
-        <nav class="nav" aria-label="Sections">
+        <nav class="nav" aria-label="Sections" data-i18n-aria="navAria">
           <a href="#projects" data-i18n="navProjects">Projects</a>
           <a href="#how" data-i18n="navHow">How I work</a>
           <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
-        <div class="lang-toggle" role="group" aria-label="Language">
+        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="langAria">
           <button type="button" id="lang-en" aria-pressed="true" data-lang="en">EN</button>
           <span class="lang-sep" aria-hidden="true">|</span>
           <button type="button" id="lang-tr" aria-pressed="false" data-lang="tr">TR</button>
@@ -565,7 +596,7 @@
       <h1 class="hero-brand" id="hero-brand">Mert Lafcı</h1>
       <p class="hero-role" data-i18n="role">Independent Developer</p>
       <p class="hero-vision" data-i18n="vision">
-        I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I make the product decisions and do the testing; AI agents write most of the code.
+        I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">See my projects</a>
@@ -591,8 +622,9 @@
           A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.
         </p>
         <p class="app-detail" data-i18n="meridyenDetail">
-          Every therapist sees only their own client data. Row-level security enforces it, so not even admins can read it.
+          Every therapist sees only their own client data. This is enforced by row-level security in the database, not just by the app.
         </p>
+        <p class="app-meta" data-i18n="meridyenMeta">Product owner · Started July 2026 · Paid version since November 2026</p>
         <p class="app-tech">Expo / React Native · TypeScript · Supabase · RevenueCat</p>
         <div class="store-links">
           <a
@@ -608,7 +640,7 @@
           </a>
           <a
             class="store-link"
-            href="https://play.google.com/store/apps/details?id=com.meridyen.terapiasistani&pcampaignid=web_share"
+            href="https://play.google.com/store/apps/details?id=com.meridyen.terapiasistani"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -774,18 +806,22 @@
         navProjects: "Projects",
         navHow: "How I work",
         navContact: "Contact",
+        navAria: "Sections",
+        langAria: "Language",
+        pageTitle: "Mert Lafcı · Independent Developer",
         role: "Independent Developer",
         vision:
-          "I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I make the product decisions and do the testing; AI agents write most of the code.",
+          "I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.",
         ctaProjects: "See my projects",
         projectsLabel: "Portfolio",
         projectsTitle: "Projects",
         projectsLead: "One app on the App Store and Google Play, and two open-source tools for the Mac.",
         meridyenStatus: "Live in Turkey",
+        meridyenMeta: "Product owner · Started July 2026 · Paid version since November 2026",
         meridyenDesc:
           "A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.",
         meridyenDetail:
-          "Every therapist sees only their own client data. Row-level security enforces it, so not even admins can read it.",
+          "Every therapist sees only their own client data. This is enforced by row-level security in the database, not just by the app.",
         openSource: "Open source",
         hifiDesc:
           "A menu-bar companion for listening to music on the Mac: system-wide parametric EQ through a Core Audio process tap, output sample-rate and bit-depth matching for Apple Music, and a sine sweep for finding peaks by ear. Works with built-in and external DACs.",
@@ -817,18 +853,22 @@
         navProjects: "Projeler",
         navHow: "Nasıl çalışıyorum",
         navContact: "İletişim",
+        navAria: "Bölümler",
+        langAria: "Dil",
+        pageTitle: "Mert Lafcı · Bağımsız Geliştirici",
         role: "Bağımsız Geliştirici",
         vision:
-          "Karşılaştığım sorunlar için küçük, odaklı uygulamalar yapıyorum: meridyen terapistleri için bir CRM, Mac'te müzik dinlerken sistem genelinde çalışan bir EQ, telefondan Mac'e hızlıca bir şey göndermenin yolu. Ürün kararları ve testler bende; kodun çoğunu AI ajanları yazıyor.",
+          "Karşılaştığım sorunlar için küçük, odaklı uygulamalar yapıyorum: meridyen terapistleri için bir CRM, Mac'te müzik dinlerken sistem genelinde çalışan bir EQ, telefondan Mac'e hızlıca bir şey göndermenin yolu. Her birinde kapsamdan yayına kadar ürün bende; AI ajanlarıyla, test edilen ve incelenen bir akışla geliştiriyorum.",
         ctaProjects: "Projelerime bak",
         projectsLabel: "Portfolyo",
         projectsTitle: "Projeler",
         projectsLead: "App Store ve Google Play'de bir mobil uygulama, Mac için iki açık kaynak araç.",
         meridyenStatus: "Türkiye'de yayında",
+        meridyenMeta: "Ürün sahibi · Temmuz 2026'da başladı · Kasım 2026'dan beri ücretli",
         meridyenDesc:
           "Meridyen terapistleri için bir mobil CRM: danışanlar, seans paketleri, randevular, SSS bilgi bankası, ürün stoku ve duyurular. Abonelikli; App Store ve Google Play'de, Türkiye'de yayında.",
         meridyenDetail:
-          "Her terapist yalnızca kendi danışan verisini görür. Bunu satır düzeyi güvenlik sağlar; yöneticiler bile bu veriyi okuyamaz.",
+          "Her terapist yalnızca kendi danışan verisini görür. Bunu yalnızca uygulama değil, veritabanındaki satır düzeyi güvenlik sağlar.",
         openSource: "Açık kaynak",
         hifiDesc:
           "Mac'te müzik dinlerken kullanılan bir menü çubuğu uygulaması: Core Audio process tap üzerinden sistem genelinde parametrik EQ, Apple Music'te çalan parçaya göre çıkışın örnekleme hızı ve bit derinliğini eşleştirme, tepe ve çukurları kulakla bulmak için sinüs taraması. Dahili ve harici DAC'larla çalışır.",
@@ -875,6 +915,13 @@
           el.setAttribute("alt", dict[key]);
         }
       });
+      document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-aria");
+        if (key && dict[key] != null) {
+          el.setAttribute("aria-label", dict[key]);
+        }
+      });
+      if (dict.pageTitle) document.title = dict.pageTitle;
       document.querySelectorAll(".lang-toggle button").forEach((btn) => {
         btn.setAttribute("aria-pressed", String(btn.dataset.lang === lang));
       });
@@ -894,7 +941,12 @@
           lang = fromQuery;
         } else {
           const saved = localStorage.getItem(STORAGE_KEY);
-          if (saved === "en" || saved === "tr") lang = saved;
+          if (saved === "en" || saved === "tr") {
+            lang = saved;
+          } else {
+            const first = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+            if (first.toLowerCase().startsWith("tr")) lang = "tr";
+          }
         }
       } catch (_) {
         /* ignore */
