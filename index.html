@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mert Lafcı — Solo Developer & App Creator. Meridyen Terapi Asistanı and upcoming hi-fi audio tools." />
+  <meta name="description" content="Mert Lafcı, independent developer. Meridyen Terapi Asistanı on iOS and Android, plus two open-source Mac tools: HiFi Companion and PocketPaste." />
   <title>Mert Lafcı</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mertlafci.com/" />
+  <meta property="og:title" content="Mert Lafcı · Independent Developer" />
+  <meta property="og:description" content="Small, focused apps: Meridyen Terapi Asistanı on iOS and Android, plus HiFi Companion and PocketPaste, open source on GitHub." />
+  <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d5c63'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,6 +40,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 4.5rem;
     }
 
     body {
@@ -102,6 +108,34 @@
     }
 
     .wordmark:hover {
+      color: var(--teal);
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav {
+      display: none;
+      gap: 1.1rem;
+    }
+
+    @media (min-width: 640px) {
+      .nav {
+        display: flex;
+      }
+    }
+
+    .nav a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
       color: var(--teal);
     }
 
@@ -177,7 +211,7 @@
 
     .hero-vision {
       margin: 1.15rem 0 0;
-      max-width: 34rem;
+      max-width: 36rem;
       font-size: clamp(1.05rem, 2.4vw, 1.2rem);
       color: var(--ink-soft);
       opacity: 0;
@@ -279,13 +313,43 @@
       transform: translateY(0);
     }
 
-    /* —— Apps —— */
+    /* —— Projects —— */
     .app-block {
       margin-top: 2rem;
       padding: 1.5rem 1.35rem;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.55);
+    }
+
+    .app-block.has-shot {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 760px) {
+      .app-block.has-shot {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0 0 0.75rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-deep);
+      font-size: 0.78rem;
+      font-weight: 600;
     }
 
     .app-name {
@@ -300,6 +364,36 @@
       margin: 0.65rem 0 0;
       color: var(--ink-soft);
       max-width: 36rem;
+    }
+
+    .app-detail {
+      margin: 0.75rem 0 0;
+      padding-left: 0.85rem;
+      border-left: 2px solid var(--teal-soft);
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 36rem;
+    }
+
+    .app-tech {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .app-shot {
+      margin: 0;
+    }
+
+    .app-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(26, 43, 46, 0.12);
     }
 
     .store-links {
@@ -334,31 +428,28 @@
       flex-shrink: 0;
     }
 
-    .upcoming {
-      margin-top: 2.5rem;
-    }
-
-    .upcoming-list {
+    /* —— How I work —— */
+    .how-list {
       list-style: none;
-      margin: 1.25rem 0 0;
+      margin: 1.75rem 0 0;
       padding: 0;
       display: grid;
       gap: 1rem;
     }
 
     @media (min-width: 640px) {
-      .upcoming-list {
+      .how-list {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.25rem;
       }
     }
 
-    .upcoming-list li {
+    .how-list li {
       padding-top: 0.85rem;
       border-top: 2px solid var(--teal-soft);
     }
 
-    .upcoming-list h4 {
+    .how-list h3 {
       margin: 0;
       font-family: var(--font-display);
       font-size: 1.1rem;
@@ -366,10 +457,16 @@
       letter-spacing: -0.02em;
     }
 
-    .upcoming-list p {
+    .how-list p {
       margin: 0.4rem 0 0;
       font-size: 0.95rem;
       color: var(--muted);
+    }
+
+    .how-more {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-weight: 600;
     }
 
     /* —— Contact —— */
@@ -385,6 +482,7 @@
       font-weight: 600;
       text-decoration: none;
       color: var(--ink);
+      overflow-wrap: anywhere;
     }
 
     .contact-mail:hover {
@@ -417,6 +515,14 @@
       transform: translateY(-2px);
     }
 
+    /* —— Footer —— */
+    .footer {
+      padding: 2rem 0 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -438,40 +544,56 @@
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="wordmark" href="#top" data-i18n="brandShort">Mert Lafcı</a>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button type="button" id="lang-en" aria-pressed="true" data-lang="en">EN</button>
-        <span class="lang-sep" aria-hidden="true">|</span>
-        <button type="button" id="lang-tr" aria-pressed="false" data-lang="tr">TR</button>
+      <a class="wordmark" href="#top">Mert Lafcı</a>
+      <div class="topbar-right">
+        <nav class="nav" aria-label="Sections">
+          <a href="#projects" data-i18n="navProjects">Projects</a>
+          <a href="#how" data-i18n="navHow">How I work</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" aria-pressed="true" data-lang="en">EN</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" id="lang-tr" aria-pressed="false" data-lang="tr">TR</button>
+        </div>
       </div>
     </div>
   </header>
 
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-brand">
-      <h1 class="hero-brand" id="hero-brand" data-i18n="brand">Mert Lafcı</h1>
-      <p class="hero-role" data-i18n="role">Solo Developer &amp; App Creator</p>
+      <h1 class="hero-brand" id="hero-brand">Mert Lafcı</h1>
+      <p class="hero-role" data-i18n="role">Independent Developer</p>
       <p class="hero-vision" data-i18n="vision">
-        I ship small, focused apps with vibe coding — fast loops, sharp taste, and tools people actually use.
+        I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for my DAC, a quick way to get things from my phone to my Mac. I make the product decisions and do the testing; AI agents write most of the code.
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#apps" data-i18n="ctaApps">See my apps</a>
-        <a class="btn btn-ghost" href="#contact" data-i18n="ctaContact">Get in touch</a>
+        <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">See my projects</a>
+        <a class="btn btn-ghost" href="https://github.com/SirReal7808" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </section>
 
-    <section id="apps" class="wrap reveal" aria-labelledby="apps-title">
-      <p class="section-label" data-i18n="appsLabel">Portfolio</p>
-      <h2 class="section-title" id="apps-title" data-i18n="appsTitle">My Apps</h2>
-      <p class="section-lead" data-i18n="appsLead">
-        Live products first — then what’s brewing in audio.
+    <section id="projects" class="wrap reveal" aria-labelledby="projects-title">
+      <p class="section-label" data-i18n="projectsLabel">Portfolio</p>
+      <h2 class="section-title" id="projects-title" data-i18n="projectsTitle">Projects</h2>
+      <p class="section-lead" data-i18n="projectsLead">
+        One app on the App Store and Google Play, and two open-source tools for the Mac.
       </p>
 
+      <!-- Meridyen Terapi Asistanı -->
       <article class="app-block" aria-labelledby="meridyen-name">
+        <ul class="app-tags">
+          <li class="tag">iOS · Android</li>
+          <li class="tag" data-i18n="meridyenStatus">Live in Turkey</li>
+        </ul>
         <h3 class="app-name" id="meridyen-name">Meridyen Terapi Asistanı</h3>
         <p class="app-desc" data-i18n="meridyenDesc">
-          A therapy companion that helps people track sessions, stay consistent, and keep progress close at hand — built for everyday use on iOS and Android.
+          A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.
         </p>
+        <p class="app-detail" data-i18n="meridyenDetail">
+          Every therapist sees only their own client data. Row-level security enforces it, so not even admins can read it.
+        </p>
+        <p class="app-tech">Expo / React Native · TypeScript · Supabase · RevenueCat</p>
         <div class="store-links">
           <a
             class="store-link"
@@ -482,7 +604,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
             </svg>
-            <span data-i18n="appStore">App Store</span>
+            <span>App Store</span>
           </a>
           <a
             class="store-link"
@@ -493,135 +615,246 @@
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
               <path d="M3.18 2.25a1.1 1.1 0 0 0-.18.58v18.34c0 .22.06.42.18.58l.05.05 10.2-10.2v-.25L3.23 2.2l-.05.05zm11.02 6.36-2.3 2.3 2.3 2.3 5.42-3.09c.57-.32.57-.85 0-1.18l-5.42-3.33zm-3.2 3.2L3.7 20.01c.2.2.5.24.82.05l11.13-6.35-4.65-4.9zm0-1.42 4.65-4.9L4.52 2.14c-.32-.19-.62-.15-.82.05l.06.06 7.24 8.14z"/>
             </svg>
-            <span data-i18n="playStore">Google Play</span>
+            <span>Google Play</span>
           </a>
         </div>
       </article>
 
-      <div class="upcoming">
-        <p class="section-label" data-i18n="upcomingLabel">Next up</p>
-        <h3 class="section-title" style="font-size: clamp(1.35rem, 3.5vw, 1.75rem);" data-i18n="upcomingTitle">
-          Upcoming Hi-Fi &amp; Audio Tools
-        </h3>
-        <p class="section-lead" data-i18n="upcomingLead">
-          A small suite for people who care how music feels — not another generic streaming shell.
-        </p>
-        <ul class="upcoming-list">
-          <li>
-            <h4 data-i18n="toolPlayerTitle">Niche music player</h4>
-            <p data-i18n="toolPlayerDesc">Local-first listening with a calm UI built for albums and long sessions.</p>
-          </li>
-          <li>
-            <h4 data-i18n="toolEqTitle">Equalizer</h4>
-            <p data-i18n="toolEqDesc">Precise tone shaping without drowning you in studio jargon.</p>
-          </li>
-          <li>
-            <h4 data-i18n="toolTunerTitle">Tuner</h4>
-            <p data-i18n="toolTunerDesc">Fast, trustworthy pitch feedback for practice and setup.</p>
-          </li>
-        </ul>
-      </div>
+      <!-- HiFi Companion -->
+      <article class="app-block has-shot" aria-labelledby="hifi-name">
+        <div>
+          <ul class="app-tags">
+            <li class="tag">macOS</li>
+            <li class="tag" data-i18n="openSource">Open source</li>
+          </ul>
+          <h3 class="app-name" id="hifi-name">HiFi Companion</h3>
+          <p class="app-desc" data-i18n="hifiDesc">
+            A menu-bar companion for listening on a hardware DAC: system-wide parametric EQ through a Core Audio process tap, Apple Music sample-rate and bit-depth matching, and a sine sweep for finding peaks by ear.
+          </p>
+          <p class="app-detail" data-i18n="hifiDetail">
+            With the EQ flat, the audio path is bit-exact, verified with a sample-by-sample null test.
+          </p>
+          <p class="app-tech">Swift · Core Audio · Sparkle</p>
+          <div class="store-links">
+            <a class="store-link" href="https://github.com/SirReal7808/hifi-companion" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a class="store-link" href="https://github.com/SirReal7808/hifi-companion/releases/latest" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/>
+              </svg>
+              <span data-i18n="downloadDmg">Download (.dmg)</span>
+            </a>
+          </div>
+        </div>
+        <figure class="app-shot">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="assets/hifi-companion-eq-dark.jpg" />
+            <img
+              src="assets/hifi-companion-eq-light.jpg"
+              width="1580"
+              height="1374"
+              loading="lazy"
+              alt="HiFi Companion EQ window with five parametric bands on a frequency graph"
+              data-i18n-alt="hifiAlt"
+            />
+          </picture>
+        </figure>
+      </article>
+
+      <!-- PocketPaste -->
+      <article class="app-block has-shot" aria-labelledby="pocketpaste-name">
+        <div>
+          <ul class="app-tags">
+            <li class="tag">Android → Mac</li>
+            <li class="tag" data-i18n="openSource">Open source</li>
+          </ul>
+          <h3 class="app-name" id="pocketpaste-name">PocketPaste</h3>
+          <p class="app-desc" data-i18n="pocketDesc">
+            Share text or an image on Android, click it in the Mac's menu bar, and it's on the clipboard. Local Wi-Fi only: no account, no cloud.
+          </p>
+          <p class="app-detail" data-i18n="pocketDetail">
+            Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.
+          </p>
+          <p class="app-tech">Swift · Kotlin</p>
+          <div class="store-links">
+            <a class="store-link" href="https://github.com/SirReal7808/pocketpaste" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a class="store-link" href="https://github.com/SirReal7808/pocketpaste/releases/latest" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/>
+              </svg>
+              <span data-i18n="download">Download</span>
+            </a>
+          </div>
+        </div>
+        <figure class="app-shot">
+          <img
+            src="assets/pocketpaste-menu.jpg"
+            width="1430"
+            height="656"
+            loading="lazy"
+            alt="PocketPaste menu on the Mac, listing texts and images sent from the phone"
+            data-i18n-alt="pocketAlt"
+          />
+        </figure>
+      </article>
+    </section>
+
+    <section id="how" class="wrap reveal" aria-labelledby="how-title">
+      <p class="section-label" data-i18n="howLabel">Process</p>
+      <h2 class="section-title" id="how-title" data-i18n="howTitle">How I work</h2>
+      <ul class="how-list">
+        <li>
+          <h3 data-i18n="how1Title">I own the product</h3>
+          <p data-i18n="how1Desc">Scope, decisions, testing on real devices and every release go through me.</p>
+        </li>
+        <li>
+          <h3 data-i18n="how2Title">AI writes most of the code</h3>
+          <p data-i18n="how2Desc">Claude Code agents do the implementation. Every change gets its own branch and pull request, passes CI tests, and risky changes get a review agent.</p>
+        </li>
+        <li>
+          <h3 data-i18n="how3Title">Repos that explain themselves</h3>
+          <p data-i18n="how3Desc">Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.</p>
+        </li>
+      </ul>
+      <a class="how-more" href="https://github.com/SirReal7808/hifi-companion#built-with-ai-agents" target="_blank" rel="noopener noreferrer" data-i18n="howMore">See the setup in the HiFi Companion repo →</a>
     </section>
 
     <section id="contact" class="wrap reveal" aria-labelledby="contact-title">
-      <p class="section-label" data-i18n="contactLabel">About</p>
-      <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Contact</h2>
-      <p class="section-lead" data-i18n="about">
-        Solo developer shipping focused mobile apps. Open to collaboration, feedback, and thoughtful product ideas.
+      <p class="section-label" data-i18n="contactLabel">Contact</p>
+      <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Get in touch</h2>
+      <p class="section-lead" data-i18n="contactLead">
+        Questions, bug reports or ideas about any of these apps? Write to me.
       </p>
       <div class="contact-block">
-        <a class="contact-mail" href="mailto:mert@mertlafci.com">mert@mertlafci.com</a>
+        <a class="contact-mail" href="mailto:lafcimert@gmail.com">lafcimert@gmail.com</a>
         <div class="socials">
-          <a
-            class="social"
-            href="https://www.linkedin.com/in/mertlafci"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/>
-            </svg>
-            <span>LinkedIn</span>
-          </a>
           <a
             class="social"
             href="https://github.com/SirReal7808"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
               <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
             </svg>
             <span>GitHub</span>
           </a>
+          <a
+            class="social"
+            href="https://www.linkedin.com/in/mertlafci"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
+  <footer class="footer">
+    <div class="wrap">© 2026 Mert Lafcı</div>
+  </footer>
+
   <script>
     const i18n = {
       en: {
-        brandShort: "Mert Lafcı",
-        brand: "Mert Lafcı",
-        role: "Solo Developer & App Creator",
+        navProjects: "Projects",
+        navHow: "How I work",
+        navContact: "Contact",
+        role: "Independent Developer",
         vision:
-          "I ship small, focused apps with vibe coding — fast loops, sharp taste, and tools people actually use.",
-        ctaApps: "See my apps",
-        ctaContact: "Get in touch",
-        appsLabel: "Portfolio",
-        appsTitle: "My Apps",
-        appsLead: "Live products first — then what’s brewing in audio.",
+          "I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for my DAC, a quick way to get things from my phone to my Mac. I make the product decisions and do the testing; AI agents write most of the code.",
+        ctaProjects: "See my projects",
+        projectsLabel: "Portfolio",
+        projectsTitle: "Projects",
+        projectsLead: "One app on the App Store and Google Play, and two open-source tools for the Mac.",
+        meridyenStatus: "Live in Turkey",
         meridyenDesc:
-          "A therapy companion that helps people track sessions, stay consistent, and keep progress close at hand — built for everyday use on iOS and Android.",
-        appStore: "App Store",
-        playStore: "Google Play",
-        upcomingLabel: "Next up",
-        upcomingTitle: "Upcoming Hi-Fi & Audio Tools",
-        upcomingLead:
-          "A small suite for people who care how music feels — not another generic streaming shell.",
-        toolPlayerTitle: "Niche music player",
-        toolPlayerDesc: "Local-first listening with a calm UI built for albums and long sessions.",
-        toolEqTitle: "Equalizer",
-        toolEqDesc: "Precise tone shaping without drowning you in studio jargon.",
-        toolTunerTitle: "Tuner",
-        toolTunerDesc: "Fast, trustworthy pitch feedback for practice and setup.",
-        contactLabel: "About",
-        contactTitle: "Contact",
-        about:
-          "Solo developer shipping focused mobile apps. Open to collaboration, feedback, and thoughtful product ideas.",
+          "A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.",
+        meridyenDetail:
+          "Every therapist sees only their own client data. Row-level security enforces it, so not even admins can read it.",
+        openSource: "Open source",
+        hifiDesc:
+          "A menu-bar companion for listening on a hardware DAC: system-wide parametric EQ through a Core Audio process tap, Apple Music sample-rate and bit-depth matching, and a sine sweep for finding peaks by ear.",
+        hifiDetail: "With the EQ flat, the audio path is bit-exact, verified with a sample-by-sample null test.",
+        hifiAlt: "HiFi Companion EQ window with five parametric bands on a frequency graph",
+        downloadDmg: "Download (.dmg)",
+        pocketDesc:
+          "Share text or an image on Android, click it in the Mac's menu bar, and it's on the clipboard. Local Wi-Fi only: no account, no cloud.",
+        pocketDetail:
+          "Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.",
+        pocketAlt: "PocketPaste menu on the Mac, listing texts and images sent from the phone",
+        download: "Download",
+        howLabel: "Process",
+        howTitle: "How I work",
+        how1Title: "I own the product",
+        how1Desc: "Scope, decisions, testing on real devices and every release go through me.",
+        how2Title: "AI writes most of the code",
+        how2Desc:
+          "Claude Code agents do the implementation. Every change gets its own branch and pull request, passes CI tests, and risky changes get a review agent.",
+        how3Title: "Repos that explain themselves",
+        how3Desc:
+          "Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.",
+        howMore: "See the setup in the HiFi Companion repo →",
+        contactLabel: "Contact",
+        contactTitle: "Get in touch",
+        contactLead: "Questions, bug reports or ideas about any of these apps? Write to me.",
       },
       tr: {
-        brandShort: "Mert Lafcı",
-        brand: "Mert Lafcı",
-        role: "Bağımsız Geliştirici & Uygulama Üreticisi",
+        navProjects: "Projeler",
+        navHow: "Nasıl çalışıyorum",
+        navContact: "İletişim",
+        role: "Bağımsız Geliştirici",
         vision:
-          "Vibe coding ile küçük, odaklı uygulamalar çıkarıyorum — hızlı döngüler, net zevk ve gerçekten kullanılan araçlar.",
-        ctaApps: "Uygulamalarıma bak",
-        ctaContact: "İletişime geç",
-        appsLabel: "Portfolyo",
-        appsTitle: "Uygulamalarım",
-        appsLead: "Önce canlı ürünler — sonra ses tarafında hazırlananlar.",
+          "Karşılaştığım sorunlar için küçük, odaklı uygulamalar yapıyorum: meridyen terapistleri için bir CRM, DAC'ım için sistem genelinde bir EQ, telefondan Mac'e hızlıca bir şey göndermenin yolu. Ürün kararları ve testler bende; kodun çoğunu AI ajanları yazıyor.",
+        ctaProjects: "Projelerime bak",
+        projectsLabel: "Portfolyo",
+        projectsTitle: "Projeler",
+        projectsLead: "App Store ve Google Play'de bir mobil uygulama, Mac için iki açık kaynak araç.",
+        meridyenStatus: "Türkiye'de yayında",
         meridyenDesc:
-          "Seansları takip etmeye, düzeni korumaya ve ilerlemeyi yakında tutmaya yardımcı bir terapi asistanı — iOS ve Android’de günlük kullanım için.",
-        appStore: "App Store",
-        playStore: "Google Play",
-        upcomingLabel: "Sırada",
-        upcomingTitle: "Yakında: Hi-Fi & Ses Araçları",
-        upcomingLead:
-          "Müziğin nasıl hissettirdiğini önemseyenler için küçük bir araç seti — sıradan bir yayın kabuğu değil.",
-        toolPlayerTitle: "Niş müzik çalar",
-        toolPlayerDesc: "Albümler ve uzun dinlemeler için sakin bir arayüzle yerel öncelikli dinleme.",
-        toolEqTitle: "Ekolayzer",
-        toolEqDesc: "Stüdyo jargonuna boğmadan net ton şekillendirme.",
-        toolTunerTitle: "Akort aleti",
-        toolTunerDesc: "Pratik ve kurulum için hızlı, güvenilir perde geri bildirimi.",
-        contactLabel: "Hakkında",
-        contactTitle: "İletişim",
-        about:
-          "Odaklı mobil uygulamalar geliştiren bağımsız yazılımcı. İş birliğine, geri bildirime ve düşünülmüş ürün fikirlerine açığım.",
+          "Meridyen terapistleri için bir mobil CRM: danışanlar, seans paketleri, randevular, SSS bilgi bankası, ürün stoku ve duyurular. Abonelikli; App Store ve Google Play'de, Türkiye'de yayında.",
+        meridyenDetail:
+          "Her terapist yalnızca kendi danışan verisini görür. Bunu satır düzeyi güvenlik sağlar; yöneticiler bile bu veriyi okuyamaz.",
+        openSource: "Açık kaynak",
+        hifiDesc:
+          "Donanım DAC'ıyla müzik dinlerken kullanılan bir menü çubuğu uygulaması: Core Audio process tap üzerinden sistem genelinde parametrik EQ, Apple Music'e göre örnekleme hızı ve bit derinliği eşleştirme, tepe ve çukurları kulakla bulmak için sinüs taraması.",
+        hifiDetail: "EQ düzken ses yolu bit-exact; bu, örnek örnek karşılaştıran bir null testle doğrulandı.",
+        hifiAlt: "Frekans grafiğinde beş parametrik bantla HiFi Companion EQ penceresi",
+        downloadDmg: "İndir (.dmg)",
+        pocketDesc:
+          "Android'de bir metni ya da görseli paylaşırsın, Mac'te menü çubuğundan tıklarsın, panoya kopyalanır. Yalnızca yerel Wi-Fi: hesap yok, bulut yok.",
+        pocketDetail:
+          "Her istek, yalnızca eşleştirme QR kodunun içinde taşınan bir anahtarla AES-256-GCM ile şifrelenir.",
+        pocketAlt: "Mac'te PocketPaste menüsü: telefondan gönderilen metin ve görsellerin listesi",
+        download: "İndir",
+        howLabel: "Süreç",
+        howTitle: "Nasıl çalışıyorum",
+        how1Title: "Ürün bende",
+        how1Desc: "Kapsam, kararlar, gerçek cihazda testler ve her yayın benden geçer.",
+        how2Title: "Kodun çoğunu AI yazar",
+        how2Desc:
+          "Uygulamayı Claude Code ajanları yazar. Her değişiklik kendi dalında ve pull request'inde ilerler, CI testlerinden geçer; riskli değişikliklere bir inceleme ajanı bakar.",
+        how3Title: "Kendini anlatan repolar",
+        how3Desc:
+          "Her repo durumunu, çalışma kurallarını ve bilinen tuzakları yazılı tutar; bir sonraki oturum kaldığı yerden devam eder.",
+        howMore: "Kurulumu HiFi Companion reposunda gör →",
+        contactLabel: "İletişim",
+        contactTitle: "İletişime geç",
+        contactLead: "Bu uygulamalarla ilgili bir sorun, soru ya da fikrin varsa yaz.",
       },
     };
 
@@ -634,6 +867,12 @@
         const key = el.getAttribute("data-i18n");
         if (key && dict[key] != null) {
           el.textContent = dict[key];
+        }
+      });
+      document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-alt");
+        if (key && dict[key] != null) {
+          el.setAttribute("alt", dict[key]);
         }
       });
       document.querySelectorAll(".lang-toggle button").forEach((btn) => {
