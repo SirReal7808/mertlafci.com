@@ -12,6 +12,7 @@ Single-page bilingual (EN / TR) personal site for **Mert Lafcı**, independent d
 - **How I work**: AI-assisted development workflow
 - **Contact**: email, GitHub, LinkedIn
 - Language toggle (EN default, TR available; `?lang=tr` works; choice saved in `localStorage`)
+- Light and dark theme (follows the system setting; the toggle choice is saved in `localStorage`)
 
 Screenshots live in `assets/`, copied from each app's repo.
 
@@ -36,4 +37,4 @@ npx --yes serve -l 43127
 
 Then visit [http://127.0.0.1:43127](http://127.0.0.1:43127).
 
-Fonts load from Google Fonts (Fraunces + DM Sans); CSS and JS are inline in `index.html`, images are in `assets/`.
+The font is Archivo (variable, SIL Open Font License), self-hosted in `assets/fonts/`; CSS and JS are inline in `index.html`, images are in `assets/`. The visual system is described in `DESIGN.md`.

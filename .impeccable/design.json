@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T00:00:00Z",
+  "title": "Design System: Mert Lafcı",
+  "extensions": {
+    "colorMeta": {
+      "pad-paper": {
+        "role": "neutral",
+        "displayName": "Pad Paper",
+        "canonical": "#e8efe0",
+        "oklch": "oklch(94.3% 0.021 127.4)",
+        "tonalRamp": [
+          "#0a0c08",
+          "#23261f",
+          "#3f4439",
+          "#5e6457",
+          "#7f8577",
+          "#a2a79b",
+          "#c7cbc2",
+          "#edefea"
+        ]
+      },
+      "mount-card": {
+        "role": "neutral",
+        "displayName": "Mount Card",
+        "canonical": "#f7faf3",
+        "oklch": "oklch(98.1% 0.010 125.7)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242622",
+          "#41433e",
+          "#60625c",
+          "#81837d",
+          "#a4a6a0",
+          "#c8cac6",
+          "#eeefec"
+        ]
+      },
+      "grid-line": {
+        "role": "neutral",
+        "displayName": "Graph Grid",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "grid-line-major": {
+        "role": "neutral",
+        "displayName": "Graph Grid Major",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "graphite-ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#17202b",
+        "oklch": "oklch(24.0% 0.025 253.8)",
+        "tonalRamp": [
+          "#090b0f",
+          "#20262d",
+          "#3a434e",
+          "#58626f",
+          "#788391",
+          "#9ca6b3",
+          "#c2cad3",
+          "#eaeff4"
+        ]
+      },
+      "graphite-soft": {
+        "role": "neutral",
+        "displayName": "Soft Graphite",
+        "canonical": "#3b4855",
+        "oklch": "oklch(39.5% 0.028 248.5)",
+        "tonalRamp": [
+          "#080c0f",
+          "#1f262d",
+          "#38434f",
+          "#556371",
+          "#768493",
+          "#99a7b4",
+          "#c1cad4",
+          "#eaeff5"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "red-pencil": {
+        "role": "primary",
+        "displayName": "Red Pencil",
+        "canonical": "#b52d17",
+        "oklch": "oklch(51.0% 0.176 31.9)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0000",
+          "#810000",
+          "#af2610",
+          "#d74e38",
+          "#f77b64",
+          "#ffae9c",
+          "#ffe0d5"
+        ]
+      },
+      "on-ink": {
+        "role": "neutral",
+        "displayName": "On Ink",
+        "canonical": "#f1f5ec",
+        "oklch": "oklch(96.5% 0.013 126.4)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#242622",
+          "#40433d",
+          "#5f635b",
+          "#80847c",
+          "#a3a69f",
+          "#c8cac5",
+          "#eeefec"
+        ]
+      },
+      "board-paper": {
+        "role": "neutral",
+        "displayName": "Drafting Board",
+        "canonical": "#0f1813",
+        "oklch": "oklch(19.8% 0.017 160.1)",
+        "tonalRamp": [
+          "#090c0a",
+          "#212723",
+          "#3b453f",
+          "#59645e",
+          "#7a867f",
+          "#9da8a2",
+          "#c4cbc7",
+          "#ebf0ed"
+        ],
+        "theme": "dark"
+      },
+      "board-mount": {
+        "role": "neutral",
+        "displayName": "Board Mount",
+        "canonical": "#18231c",
+        "oklch": "oklch(24.3% 0.020 156.6)",
+        "tonalRamp": [
+          "#090c0a",
+          "#202723",
+          "#3a453e",
+          "#58655c",
+          "#79867d",
+          "#9ca9a0",
+          "#c3ccc6",
+          "#ebf0ec"
+        ],
+        "theme": "dark"
+      },
+      "board-grid-line": {
+        "role": "neutral",
+        "displayName": "Board Grid",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "board-grid-line-major": {
+        "role": "neutral",
+        "displayName": "Board Grid Major",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "chalk-ink": {
+        "role": "neutral",
+        "displayName": "Chalk Ink",
+        "canonical": "#e3ebe1",
+        "oklch": "oklch(93.1% 0.016 139.4)",
+        "tonalRamp": [
+          "#0a0c09",
+          "#232622",
+          "#3e443d",
+          "#5d645b",
+          "#7e857c",
+          "#a1a79f",
+          "#c6cbc5",
+          "#ecefec"
+        ],
+        "theme": "dark"
+      },
+      "chalk-soft": {
+        "role": "neutral",
+        "displayName": "Soft Chalk",
+        "canonical": "#a7b6aa",
+        "oklch": "oklch(76.1% 0.024 151.5)",
+        "tonalRamp": [
+          "#090c09",
+          "#202721",
+          "#3a453c",
+          "#58655b",
+          "#78877b",
+          "#9ca99e",
+          "#c2ccc4",
+          "#ebf0ec"
+        ],
+        "theme": "dark"
+      },
+      "chalk-rule": {
+        "role": "neutral",
+        "displayName": "Chalk Rule",
+        "canonical": "#cfdccf",
+        "oklch": "oklch(88.1% 0.022 145.4)",
+        "tonalRamp": [
+          "#090c09",
+          "#212721",
+          "#3b453c",
+          "#5a655a",
+          "#7a867a",
+          "#9ea99e",
+          "#c4ccc4",
+          "#ebf0eb"
+        ],
+        "theme": "dark"
+      },
+      "chalk-rule-soft": {
+        "role": "neutral",
+        "displayName": "Chalk Hairline",
+        "note": "Translucent rgba value; canonical in frontmatter, no tonal ramp."
+      },
+      "red-pencil-night": {
+        "role": "primary",
+        "displayName": "Red Pencil (night)",
+        "canonical": "#ff8466",
+        "oklch": "oklch(74.6% 0.156 34.8)",
+        "tonalRamp": [
+          "#1d0200",
+          "#4a0900",
+          "#7b1500",
+          "#a73417",
+          "#ce583c",
+          "#ef8267",
+          "#ffb29e",
+          "#ffe2d6"
+        ],
+        "theme": "dark"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The owner's name in the first viewport only; Archivo at 125% width."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles sitting on a 2px rule."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "App names in sheet heads; same voice for process step titles and the contact email field."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and process text, max 38rem."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Vision paragraph and section leads in soft graphite."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Condensed uppercase cells: title block, sheet heads, figure captions, footer."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button and link-cell labels at 90% width."
+      }
+    },
+    "shadows": [
+      {
+        "name": "clipped-figure",
+        "value": "0 14px 30px -12px rgba(23, 32, 43, 0.28), 0 2px 6px rgba(23, 32, 43, 0.08)",
+        "purpose": "Screenshot mounts only (light)."
+      },
+      {
+        "name": "clipped-figure-dark",
+        "value": "0 16px 34px -12px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3)",
+        "purpose": "Screenshot mounts only (dark)."
+      },
+      {
+        "name": "active-cell-underline",
+        "value": "inset 0 -3px 0 var(--red)",
+        "purpose": "Current nav cell marker in red pencil."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All transitions and stroke drawing."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Hover inversions and colour changes."
+      },
+      {
+        "name": "theme",
+        "value": "0.3s",
+        "purpose": "Paper and ink colour swap between themes; arrow nudge on the contact field."
+      },
+      {
+        "name": "stroke-draw",
+        "value": "1.4s",
+        "purpose": "Process line draws once on entry (stroke-dashoffset 1 to 0)."
+      },
+      {
+        "name": "check-draw",
+        "value": "0.7s, 0.25s delay",
+        "purpose": "Verification checks draw once on entry."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "transitions 0.01ms; strokes shown drawn",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-two-row",
+        "value": "max-width: 699px"
+      },
+      {
+        "name": "section-head-split",
+        "value": "860px"
+      },
+      {
+        "name": "opening-split",
+        "value": "960px"
+      },
+      {
+        "name": "sheets-two-column",
+        "value": "1000px"
+      }
+    ],
+    "grid": {
+      "minor": "24px",
+      "major": "120px",
+      "container": "min(100% - 2rem, 72rem)"
+    },
+    "font": {
+      "family": "Archivo",
+      "source": "assets/fonts/archivo-latin.woff2, assets/fonts/archivo-latin-ext.woff2",
+      "license": "SIL OFL 1.1",
+      "axes": {
+        "wght": "100-900",
+        "wdth": "62-125%"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action; solid graphite that empties on hover.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">See my projects <svg class=\"ds-ic\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 5v14M6 13l6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.2rem; border: 2px solid var(--rule, #17202b); border-radius: 2px; font-stretch: 90%; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-ic { width: 1rem; height: 1rem; } .ds-btn-primary { background: var(--ink, #17202b); color: var(--on-ink, #f1f5ec); } .ds-btn-primary:hover { background: transparent; color: var(--ink, #17202b); } .ds-btn:focus-visible { outline: 2px solid var(--red, #b52d17); outline-offset: 3px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on paper; fills with graphite on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">GitHub</a>",
+      "css": ".ds-btn-line { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: inline-flex; align-items: center; min-height: 3rem; padding: 0 1.2rem; border: 2px solid var(--rule, #17202b); border-radius: 2px; background: var(--paper, #e8efe0); color: var(--ink, #17202b); font-stretch: 90%; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-btn-line:hover { background: var(--ink, #17202b); color: var(--on-ink, #f1f5ec); } .ds-btn-line:focus-visible { outline: 2px solid var(--red, #b52d17); outline-offset: 3px; }"
+    },
+    {
+      "name": "Link Cell",
+      "kind": "button",
+      "refersTo": "link-cell",
+      "description": "Outbound project link (store, repository, download) in a 1px ruled cell.",
+      "html": "<a class=\"ds-link-cell\" href=\"#\">Source on GitHub</a>",
+      "css": ".ds-link-cell { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: inline-flex; align-items: center; gap: 0.55rem; min-height: 2.9rem; padding: 0 1rem; border: 1px solid var(--rule, #17202b); border-radius: 2px; background: var(--paper, #e8efe0); color: var(--ink, #17202b); font-weight: 650; font-size: 0.95rem; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-link-cell:hover { background: var(--ink, #17202b); color: var(--on-ink, #f1f5ec); } .ds-link-cell:focus-visible { outline: 2px solid var(--red, #b52d17); outline-offset: 3px; }"
+    },
+    {
+      "name": "Title Block Nav",
+      "kind": "nav",
+      "refersTo": "title-block-cell",
+      "description": "Sticky top bar of ruled cells; current section underlined in red pencil.",
+      "html": "<nav class=\"ds-tb\"><a class=\"ds-tb-mark\" href=\"#\">Mert Lafcı</a><a class=\"ds-tb-cell\" aria-current=\"true\" href=\"#\">Projects</a><a class=\"ds-tb-cell\" href=\"#\">How I work</a><a class=\"ds-tb-cell\" href=\"#\">Contact</a><span class=\"ds-tb-lang\"><b>EN</b><span>TR</span></span></nav>",
+      "css": ".ds-tb { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: flex; background: var(--paper, #e8efe0); border-bottom: 2px solid var(--rule, #17202b); color: var(--ink, #17202b); } .ds-tb-mark { flex: 1; display: flex; align-items: center; min-height: 3rem; padding: 0 1rem; font-stretch: 118%; font-weight: 800; font-size: 1rem; text-transform: uppercase; text-decoration: none; color: inherit; } .ds-tb-cell { display: flex; align-items: center; min-height: 3rem; padding: 0 1rem; border-left: 1px solid var(--rule-soft, rgba(23,32,43,0.2)); font-stretch: 80%; font-weight: 600; font-size: 0.86rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--ink-2, #3b4855); transition: color 0.2s, background-color 0.2s; } .ds-tb-cell:hover { color: var(--ink, #17202b); background: var(--grid, rgba(47,104,72,0.09)); } .ds-tb-cell[aria-current=\"true\"] { color: var(--ink, #17202b); box-shadow: inset 0 -3px 0 var(--red, #b52d17); } .ds-tb-cell:focus-visible { outline: 2px solid var(--red, #b52d17); outline-offset: -2px; } .ds-tb-lang { display: flex; align-items: center; gap: 0.75rem; padding: 0 1rem; border-left: 1px solid var(--rule-soft, rgba(23,32,43,0.2)); font-stretch: 80%; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; color: var(--ink-2, #3b4855); } .ds-tb-lang b { color: var(--red, #b52d17); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.35em; }"
+    },
+    {
+      "name": "Sheet Head",
+      "kind": "custom",
+      "refersTo": "sheet-cell",
+      "description": "Signature ruled title block on every project sheet: name, platform, status in red pencil, stack.",
+      "html": "<div class=\"ds-sheet-head\"><h3 class=\"ds-app-name\">HiFi Companion</h3><p class=\"ds-cell\">macOS</p><p class=\"ds-cell ds-cell-status\">Open source</p><p class=\"ds-cell ds-cell-stack\">Swift · Core Audio · Sparkle</p></div>",
+      "css": ".ds-sheet-head { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: flex; flex-wrap: wrap; border: 1px solid var(--rule, #17202b); background: var(--paper, #e8efe0); color: var(--ink, #17202b); } .ds-sheet-head > * { margin: 0; padding: 0.6rem 0.85rem; border-left: 1px solid var(--rule-soft, rgba(23,32,43,0.2)); } .ds-app-name { flex: 1 1 100%; border-left: 0 !important; border-bottom: 1px solid var(--rule-soft, rgba(23,32,43,0.2)); font-stretch: 108%; font-weight: 800; font-size: 2rem; line-height: 1.1; letter-spacing: -0.025em; } .ds-app-name + .ds-cell { border-left: 0; } .ds-cell { font-stretch: 75%; font-weight: 650; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; font-variant-numeric: tabular-nums; } .ds-cell-status { color: var(--red, #b52d17); } .ds-cell-stack { flex: 1 1 auto; color: var(--ink-2, #3b4855); letter-spacing: 0.04em; }"
+    },
+    {
+      "name": "Verified Claim",
+      "kind": "custom",
+      "refersTo": "red-pencil",
+      "description": "A drawn red-pencil check beside the sheet's one verifiable claim.",
+      "html": "<p class=\"ds-verified\"><svg class=\"ds-check\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 13.5l5 5L20 6\"/></svg><span>Bit-exact audio path; a flat EQ passes a null test.</span></p>",
+      "css": ".ds-verified { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.75rem; margin: 0; max-width: 38rem; font-weight: 600; color: var(--ink, #17202b); } .ds-check { width: 1.6rem; height: 1.6rem; color: var(--red, #b52d17); } .ds-check path { fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; animation: ds-draw 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s both; } @keyframes ds-draw { from { stroke-dashoffset: 1; } } @media (prefers-reduced-motion: reduce) { .ds-check path { animation: none; } }"
+    },
+    {
+      "name": "Figure Mount",
+      "kind": "card",
+      "refersTo": "mount-card",
+      "description": "Screenshot clipped onto lighter stock with the one ambient shadow and a Fig. caption.",
+      "html": "<figure class=\"ds-figure\"><span class=\"ds-mount\"><span class=\"ds-shot\"></span></span><figcaption>Fig. 2.1</figcaption></figure>",
+      "css": ".ds-figure { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); margin: 0; max-width: 20rem; } .ds-mount { display: block; padding: 0.5rem; background: var(--mount, #f7faf3); border: 1px solid var(--rule-soft, rgba(23,32,43,0.2)); box-shadow: var(--shadow, 0 14px 30px -12px rgba(23,32,43,0.28), 0 2px 6px rgba(23,32,43,0.08)); } .ds-shot { display: block; aspect-ratio: 16 / 10; background: linear-gradient(var(--grid-major, rgba(47,104,72,0.17)), var(--grid, rgba(47,104,72,0.09))); } .ds-figure figcaption { margin-top: 0.7rem; font-stretch: 75%; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2, #3b4855); }"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "input",
+      "refersTo": "button-line",
+      "description": "The email shown as a filled form field; inverts to graphite on hover.",
+      "html": "<div class=\"ds-field\"><a class=\"ds-field-mail\" href=\"#\">name@example.com <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17L17 7M8 7h9v9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div>",
+      "css": ".ds-field { font-family: var(--font, 'Archivo', 'Helvetica Neue', Arial, sans-serif); border: 2px solid var(--rule, #17202b); background: var(--paper, #e8efe0); color: var(--ink, #17202b); } .ds-field-mail { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.5rem 1.5rem; font-stretch: 105%; font-weight: 800; font-size: 1.8rem; line-height: 1.1; letter-spacing: -0.025em; text-decoration: none; color: inherit; overflow-wrap: anywhere; transition: background-color 0.2s, color 0.2s; } .ds-field-mail svg { width: 1.8rem; height: 1.8rem; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-field-mail:hover { background: var(--ink, #17202b); color: var(--on-ink, #f1f5ec); } .ds-field-mail:hover svg { transform: translate(0.2rem, -0.2rem); } .ds-field-mail:focus-visible { outline: 2px solid var(--red, #b52d17); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Computation Pad",
+    "overview": "The page is an engineer's pad of green-tinted grid paper. Each shipped app is a filled-in sheet: a ruled title block of cells across the top, a plain-language description, a verified claim ticked in red pencil, and screenshots clipped on as numbered figures. Chrome is drawn with rules, not boxes of colour; the paper, its grid and graphite ink do nearly all the work, so the products carry the page.\n\nDark mode is the same pad laid on a green-black drafting board: chalk ink, a grid that glows faintly, and luminance doing the job colour does in light mode. One red-pencil colour exists in each theme and is held for state: what is verified, what is active, what has focus. Motion is a pencil, not a slide: strokes draw themselves once when they enter view and then stay.\n\nType is a single variable family, Archivo, used across its width axis. Expanded heavy cuts set names at architectural scale; condensed caps fill the ruled cells; the normal width carries reading text.",
+    "keyCharacteristics": [
+      "Pale green grid paper (24px cells, every fifth line stronger) as the page itself, not a texture on a card.",
+      "Ruled title blocks: hairline cells in condensed caps, identical across every sheet header and the top bar.",
+      "One red pencil per theme, reserved for verification, active state, focus and selection.",
+      "Archivo across its width axis: 125% for the name, ~108-112% for headings, 75-80% for cell labels, 100% for reading.",
+      "Near-square corners (2px); screenshots mounted on lighter card stock with one soft ambient shadow.",
+      "Strokes (check marks, the process line) draw once on entry; nothing slides or bounces."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Pencil Rule",
+        "body": "Red marks state and verification only: a checked claim, a status cell, the active choice, focus, selection. It never decorates a heading, a background or an icon that is not a mark.",
+        "section": "colors"
+      },
+      {
+        "name": "The Luminance Is State Rule",
+        "body": "In dark mode, emphasis comes from brightness (chalk ink against soft chalk, brighter red pencil), not from new hues or glows.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Axis Rule",
+        "body": "Hierarchy is set with font-stretch as well as size: names expand, cells condense, reading stays at 100%. Never introduce a second family to get contrast.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Handwriting Rule",
+        "body": "Red-pencil marks are drawn SVG strokes with round caps; a handwriting or script font never stands in for them.",
+        "section": "typography"
+      },
+      {
+        "name": "The Drawn Not Stacked Rule",
+        "body": "Containers are outlined with rules on the paper colour; they never float. A shadow belongs to a clipped-on figure and nothing else.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do draw every container as a rule on the paper colour: 2px graphite for structure, 1px soft hairline for subdivisions.",
+      "Do reuse the sheet-head cells (name, platform, status, stack) in the same order for any new project sheet.",
+      "Do set cell and caption labels in Archivo at 75-80% width, uppercase, letter-spacing 0.06-0.08em.",
+      "Do number figures \"Fig. n.m\" by sheet and keep captions in the label voice.",
+      "Do keep red pencil to verification, status, the active choice, focus and selection; check text contrast against both paper colours.",
+      "Do let new marks (ticks, connectors) be SVG strokes with round caps that draw once on entry and respect reduced motion.",
+      "Do keep both themes mapped through the same custom properties so every component inherits the swap."
+    ],
+    "donts": [
+      "Don't add a second accent hue or tint backgrounds with red.",
+      "Don't use a handwriting or script font for pencil marks.",
+      "Don't round containers beyond 2px or give ruled containers a drop shadow; the shadow belongs to mounted figures only.",
+      "Don't add a second type family; get contrast from Archivo's width and weight.",
+      "Don't introduce slide-in, fade-up or bouncing entrances; the only entry motion is a stroke drawing itself.",
+      "Don't replace the grid paper with a flat background or a gradient, or add neon glows in dark mode."
+    ]
+  }
+}

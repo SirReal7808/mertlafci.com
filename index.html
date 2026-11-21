@@ -15,27 +15,92 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Mert Lafcı, Independent Developer: Meridyen Terapi Asistanı, HiFi Companion and PocketPaste" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d5c63'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <script>document.documentElement.classList.add("js");</script>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#e8efe0" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1813" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2317202b'/%3E%3Cpath d='M8 23V9l8 9 8-9v14' fill='none' stroke='%23e8efe0' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        var t = localStorage.getItem("mertlafci-theme");
+        if (t === "light" || t === "dark") d.setAttribute("data-theme", t);
+      } catch (_) {}
+    })();
+  </script>
   <style>
+    @font-face {
+      font-family: "Archivo";
+      font-style: normal;
+      font-weight: 100 900;
+      font-stretch: 62% 125%;
+      font-display: swap;
+      src: url(assets/fonts/archivo-latin-ext.woff2) format("woff2");
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+      font-family: "Archivo";
+      font-style: normal;
+      font-weight: 100 900;
+      font-stretch: 62% 125%;
+      font-display: swap;
+      src: url(assets/fonts/archivo-latin.woff2) format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* Pad paper (light) */
     :root {
-      --ink: #1a2b2e;
-      --ink-soft: #3d5559;
-      --muted: #4f6468;
-      --paper: #f7f4ef;
-      --sky: #dceaf0;
-      --teal: #0d5c63;
-      --teal-deep: #084449;
-      --teal-soft: rgba(13, 92, 99, 0.1);
-      --line: rgba(26, 43, 46, 0.12);
-      --radius: 12px;
-      --font-display: "Fraunces", Georgia, serif;
-      --font-body: "DM Sans", "Segoe UI", sans-serif;
-      --max: 42rem;
-      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      color-scheme: light;
+      --paper: #e8efe0;
+      --mount: #f7faf3;
+      --grid: rgba(47, 104, 72, 0.09);
+      --grid-major: rgba(47, 104, 72, 0.17);
+      --ink: #17202b;
+      --ink-2: #3b4855;
+      --rule: #17202b;
+      --rule-soft: rgba(23, 32, 43, 0.2);
+      --red: #b52d17;
+      --on-ink: #f1f5ec;
+      --shadow: 0 14px 30px -12px rgba(23, 32, 43, 0.28), 0 2px 6px rgba(23, 32, 43, 0.08);
+      --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+      --wrap: min(100% - 2rem, 72rem);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Drafting board at night (dark) */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --paper: #0f1813;
+        --mount: #18231c;
+        --grid: rgba(150, 214, 172, 0.06);
+        --grid-major: rgba(150, 214, 172, 0.12);
+        --ink: #e3ebe1;
+        --ink-2: #a7b6aa;
+        --rule: #cfdccf;
+        --rule-soft: rgba(207, 220, 207, 0.2);
+        --red: #ff8466;
+        --on-ink: #0f1813;
+        --shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #0f1813;
+      --mount: #18231c;
+      --grid: rgba(150, 214, 172, 0.06);
+      --grid-major: rgba(150, 214, 172, 0.12);
+      --ink: #e3ebe1;
+      --ink-2: #a7b6aa;
+      --rule: #cfdccf;
+      --rule-soft: rgba(207, 220, 207, 0.2);
+      --red: #ff8466;
+      --on-ink: #0f1813;
+      --shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
     *,
@@ -46,529 +111,948 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 4.5rem;
+      scroll-padding-top: 6.5rem;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: var(--font-body);
-      font-optical-sizing: auto;
+      font-family: var(--font);
+      font-size: 1.0625rem;
+      line-height: 1.6;
       color: var(--ink);
-      background:
-        radial-gradient(ellipse 90% 55% at 10% -10%, rgba(220, 234, 240, 0.95), transparent 55%),
-        radial-gradient(ellipse 70% 45% at 95% 15%, rgba(13, 92, 99, 0.08), transparent 50%),
-        linear-gradient(165deg, var(--paper) 0%, #eef5f7 48%, var(--sky) 100%);
-      background-attachment: fixed;
-      line-height: 1.55;
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(var(--grid-major) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+      background-position: -1px -1px;
       -webkit-font-smoothing: antialiased;
+      scrollbar-color: var(--ink-2) var(--paper);
+      transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+    }
+
+    ::selection {
+      background: var(--red);
+      color: var(--on-ink);
     }
 
     a {
-      color: var(--teal);
+      color: inherit;
       text-decoration-thickness: 1px;
-      text-underline-offset: 0.18em;
-      transition: color 0.2s var(--ease), opacity 0.2s var(--ease), transform 0.2s var(--ease);
+      text-underline-offset: 0.22em;
     }
 
-    a:hover {
-      color: var(--teal-deep);
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--teal);
+    :focus-visible {
+      outline: 2px solid var(--red);
       outline-offset: 3px;
     }
 
     .wrap {
-      width: min(100% - 2rem, 52rem);
+      width: var(--wrap);
       margin-inline: auto;
     }
 
-    /* —— Top bar —— */
-    .topbar {
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    svg.icon {
+      width: 1.1em;
+      height: 1.1em;
+      flex-shrink: 0;
+    }
+
+    /* —— Title block (top bar) —— */
+    .titleblock {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(247, 244, 239, 0.78);
-      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      border-bottom: 2px solid var(--rule);
     }
 
-    .topbar-inner {
+    .tb-row {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      border-inline: 1px solid var(--rule-soft);
+    }
+
+    .tb-cell {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.85rem 0;
+      min-height: 3rem;
+      padding: 0 1rem;
+      border-left: 1px solid var(--rule-soft);
+    }
+
+    .tb-cell:first-child {
+      border-left: 0;
     }
 
     .wordmark {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-      color: var(--ink);
+      font-stretch: 118%;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
       text-decoration: none;
-    }
-
-    .wordmark:hover {
-      color: var(--teal);
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
+      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
-      gap: 1.1rem;
-    }
-
-    @media (max-width: 639px) {
-      .topbar-inner {
-        flex-wrap: wrap;
-        row-gap: 0.5rem;
-      }
-
-      .topbar-right {
-        display: contents;
-      }
-
-      .nav {
-        order: 3;
-        width: 100%;
-        gap: 1.25rem;
-      }
-
-      .nav a {
-        padding: 0.2rem 0;
-      }
+      padding: 0;
     }
 
     .nav a {
-      color: var(--ink-soft);
-      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      min-height: 3rem;
+      padding: 0 1rem;
+      border-left: 1px solid var(--rule-soft);
+      font-stretch: 80%;
       font-weight: 600;
+      font-size: 0.86rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       text-decoration: none;
+      color: var(--ink-2);
+      transition: color 0.2s var(--ease), background-color 0.2s var(--ease);
+    }
+
+    .nav a:first-child {
+      border-left: 0;
     }
 
     .nav a:hover {
-      color: var(--teal);
+      color: var(--ink);
+      background: var(--grid);
+    }
+
+    .nav a[aria-current="true"] {
+      color: var(--ink);
+      box-shadow: inset 0 -3px 0 var(--red);
     }
 
     .lang-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.2rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
+      gap: 0.25rem;
+      padding: 0 0.5rem;
     }
 
-    .lang-toggle button {
+    .switch {
       appearance: none;
       border: 0;
       background: transparent;
-      color: var(--muted);
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 0.35rem 0.65rem;
-      border-radius: 999px;
+      color: var(--ink-2);
+      font: inherit;
+      font-stretch: 80%;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0 0.4rem;
       cursor: pointer;
-      transition: background 0.2s var(--ease), color 0.2s var(--ease);
+      transition: color 0.2s var(--ease);
     }
 
-    .lang-toggle button[aria-pressed="true"] {
-      background: var(--teal);
-      color: #fff;
+    .switch:hover {
+      color: var(--ink);
     }
 
-    .lang-sep {
-      color: var(--line);
-      font-size: 0.75rem;
-      user-select: none;
+    .lang-toggle .switch[aria-pressed="true"] {
+      color: var(--red);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.35em;
     }
 
-    /* —— Hero —— */
-    .hero {
-      padding: clamp(3.5rem, 12vw, 6.5rem) 0 clamp(3rem, 8vw, 4.5rem);
-      min-height: min(78vh, 38rem);
-      display: flex;
-      flex-direction: column;
+    .theme-cell {
+      padding: 0 0.35rem;
+    }
+
+    /* The theme switch needs JS; without it the page follows the system setting. */
+    html:not(.js) .theme-cell {
+      display: none;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
     }
 
-    @media (max-width: 639px) {
-      .hero {
-        min-height: 0;
-        padding-top: 2.5rem;
+    .theme-toggle svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    .theme-toggle .moon,
+    :root[data-theme-effective="dark"] .theme-toggle .sun {
+      display: none;
+    }
+
+    :root[data-theme-effective="dark"] .theme-toggle .moon {
+      display: block;
+    }
+
+    @media (max-width: 699px) {
+      html {
+        scroll-padding-top: 7rem;
+      }
+
+      .tb-row {
+        grid-template-columns: 1fr auto auto;
+        border-inline: 0;
+      }
+
+      .nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        border-top: 1px solid var(--rule-soft);
+        border-left: 0;
+      }
+
+      .nav a {
+        flex: 1;
+        justify-content: center;
+        padding: 0 0.5rem;
+        min-height: 2.75rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        text-align: center;
+        line-height: 1.15;
       }
     }
 
-    .hero-brand {
+    /* —— Opening sheet —— */
+    .opening {
+      display: grid;
+      gap: 1.5rem;
+      padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(1rem, 3vw, 2rem);
+    }
+
+    @media (min-width: 960px) {
+      .opening {
+        grid-template-columns: minmax(0, 1fr) 23rem;
+        gap: 2.5rem 4rem;
+        align-items: end;
+      }
+
+      .opening .name {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .name {
       margin: 0;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(3rem, 11vw, 5.25rem);
-      line-height: 1.02;
+      font-stretch: 125%;
+      font-weight: 850;
+      font-size: clamp(2.9rem, 13.5vw, 10rem);
+      line-height: 0.92;
       letter-spacing: -0.035em;
-      color: var(--ink);
-      opacity: 0;
-      transform: translateY(14px);
-      animation: rise 0.9s var(--ease) 0.08s forwards;
+      text-wrap: balance;
     }
 
-    .hero-role {
-      margin: 1rem 0 0;
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(1.25rem, 3.2vw, 1.65rem);
-      letter-spacing: -0.02em;
-      color: var(--teal);
-      opacity: 0;
-      transform: translateY(12px);
-      animation: rise 0.9s var(--ease) 0.22s forwards;
+    .role {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0;
+      font-stretch: 75%;
+      font-weight: 650;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .hero-vision {
-      margin: 1.15rem 0 0;
-      max-width: 36rem;
-      font-size: clamp(1.05rem, 2.4vw, 1.2rem);
-      color: var(--ink-soft);
-      opacity: 0;
-      transform: translateY(12px);
-      animation: rise 0.9s var(--ease) 0.36s forwards;
+    .role::before {
+      content: "";
+      width: 2.5rem;
+      height: 2px;
+      background: var(--ink);
     }
 
-    .hero-cta {
-      margin-top: 1.75rem;
+    .vision {
+      margin: 1.5rem 0 0;
+      max-width: 38rem;
+      font-size: clamp(1.08rem, 2.2vw, 1.22rem);
+      line-height: 1.6;
+      color: var(--ink-2);
+      text-wrap: pretty;
+    }
+
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      opacity: 0;
-      transform: translateY(12px);
-      animation: rise 0.9s var(--ease) 0.48s forwards;
+      margin-top: 2rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1.1rem;
-      border-radius: 999px;
-      font-weight: 600;
+      gap: 0.6rem;
+      min-height: 3rem;
+      padding: 0 1.2rem;
+      border: 2px solid var(--rule);
+      border-radius: 2px;
+      font-stretch: 90%;
+      font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
-      transition: transform 0.2s var(--ease), background 0.2s var(--ease), color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      transition: background-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
     }
 
     .btn-primary {
-      background: var(--teal);
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(13, 92, 99, 0.18);
+      background: var(--ink);
+      color: var(--on-ink);
     }
 
     .btn-primary:hover {
-      background: var(--teal-deep);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
       background: transparent;
       color: var(--ink);
-      border: 1px solid var(--line);
     }
 
-    .btn-ghost:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      transform: translateY(-1px);
+    .btn-line {
+      background: var(--paper);
     }
 
-    @keyframes rise {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .btn-line:hover {
+      background: var(--ink);
+      color: var(--on-ink);
     }
 
-    /* —— Sections —— */
-    main section {
-      padding: clamp(2.5rem, 7vw, 4rem) 0;
+    .btn .icon {
+      width: 1rem;
+      height: 1rem;
     }
 
-    .section-label {
-      margin: 0 0 0.5rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+    /* Sheet index: the three projects as figures */
+    .index {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 2px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .index li + li {
+      border-top: 1px solid var(--rule-soft);
+    }
+
+    .index a {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.75rem;
+      text-decoration: none;
+      transition: background-color 0.2s var(--ease);
+    }
+
+    .index a:hover {
+      background: var(--grid);
+    }
+
+    .index-thumb {
+      display: block;
+      width: 4.5rem;
+      height: 3.5rem;
+      object-fit: cover;
+      object-position: top;
+      border: 1px solid var(--rule-soft);
+      background: var(--mount);
+    }
+
+    .index-fig {
+      display: block;
+      font-stretch: 75%;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--teal);
+      color: var(--ink-2);
+    }
+
+    .index-name {
+      display: block;
+      font-stretch: 100%;
+      font-weight: 750;
+      font-size: 1.02rem;
+      line-height: 1.25;
+    }
+
+    .index-arrow {
+      width: 1rem;
+      height: 1rem;
+      color: var(--ink-2);
+      transition: transform 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .index a:hover .index-arrow {
+      color: var(--ink);
+      transform: translateY(2px);
+    }
+
+    .index a:hover .index-name {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    /* —— Section heads —— */
+    main > section {
+      padding: clamp(3rem, 8vw, 6rem) 0 0;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 0.75rem 3rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    @media (min-width: 860px) {
+      .section-head {
+        grid-template-columns: auto 1fr;
+        align-items: end;
+      }
     }
 
     .section-title {
       margin: 0;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+      font-stretch: 112%;
+      font-weight: 800;
+      font-size: clamp(2.1rem, 6vw, 3.6rem);
+      line-height: 1;
       letter-spacing: -0.03em;
-      line-height: 1.15;
     }
 
     .section-lead {
-      margin: 0.75rem 0 0;
-      max-width: var(--max);
-      color: var(--ink-soft);
-      font-size: 1.05rem;
+      margin: 0;
+      max-width: 34rem;
+      color: var(--ink-2);
+      font-size: 1.08rem;
+      text-wrap: pretty;
     }
 
-    .js .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-    }
-
-    .js .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* —— Projects —— */
-    .app-block {
-      margin-top: 2rem;
-      padding: 1.5rem 1.35rem;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.55);
-    }
-
-    .app-block.has-shot {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    @media (min-width: 760px) {
-      .app-block.has-shot {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+    @media (min-width: 860px) {
+      .section-lead {
+        justify-self: end;
+        text-align: right;
       }
     }
 
-    .app-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0 0 0.75rem;
-      padding: 0;
-      list-style: none;
+    /* —— Project sheets —— */
+    .sheets {
+      display: grid;
+      gap: 0 3rem;
     }
 
-    .tag {
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: var(--teal-soft);
-      color: var(--teal-deep);
-      font-size: 0.78rem;
-      font-weight: 600;
+    @media (min-width: 1000px) {
+      .sheets {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sheet-lead {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .sheet {
+      padding: 2.5rem 0 3rem;
+      border-bottom: 1px solid var(--rule-soft);
+    }
+
+    @media (min-width: 1000px) {
+      .sheet:not(.sheet-lead) {
+        border-bottom: 0;
+      }
+    }
+
+    .sheet-head {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+    }
+
+    .sheet-head > * {
+      margin: 0;
+      padding: 0.6rem 0.85rem;
+      border-left: 1px solid var(--rule-soft);
+    }
+
+    .sheet-head > :first-child {
+      border-left: 0;
     }
 
     .app-name {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
+      flex: 1 1 100%;
+      border-bottom: 1px solid var(--rule-soft);
+      font-stretch: 108%;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 3.6vw, 2.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
     }
 
-    .app-desc {
-      margin: 0.65rem 0 0;
-      color: var(--ink-soft);
-      max-width: 36rem;
+    .sheet-head .app-name {
+      border-left: 0;
     }
 
-    .app-detail {
-      margin: 0.75rem 0 0;
-      padding-left: 0.85rem;
-      border-left: 2px solid var(--teal-soft);
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 36rem;
+    .sheet-head .app-name + .cell {
+      border-left: 0;
     }
 
-    .app-meta {
-      margin: 0.85rem 0 0;
-      color: var(--ink-soft);
-      font-size: 0.9rem;
-      font-weight: 600;
+    .cell {
+      font-stretch: 75%;
+      font-weight: 650;
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-variant-numeric: tabular-nums;
     }
 
-    .app-tech {
-      margin: 0.85rem 0 0;
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+    .cell-status {
+      color: var(--red);
     }
 
-    .app-shot {
-      margin: 0;
+    .cell-stack {
+      flex: 1 1 auto;
+      color: var(--ink-2);
+      letter-spacing: 0.04em;
     }
 
-    .app-shot-phones {
+    .sheet-body {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.85rem;
-      max-width: 22rem;
-      margin-inline: auto;
-      width: 100%;
+      gap: 2rem;
+      margin-top: 1.75rem;
     }
 
-    .app-shot-phones img {
-      border-radius: 16px;
-    }
-
-    .app-shot img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 28px rgba(26, 43, 46, 0.12);
-    }
-
-    .store-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: 1.25rem;
-    }
-
-    .store-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.65rem 0.95rem;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .store-link:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(13, 92, 99, 0.1);
-    }
-
-    .store-link svg {
-      flex-shrink: 0;
-    }
-
-    /* —— How I work —— */
-    .how-list {
-      list-style: none;
-      margin: 1.75rem 0 0;
-      padding: 0;
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .how-list {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;
+    @media (min-width: 860px) {
+      .sheet-lead .sheet-body {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: 3.5rem;
+        align-items: start;
       }
     }
 
-    .how-list li {
-      padding-top: 0.85rem;
-      border-top: 2px solid var(--teal-soft);
+    .sheet:not(.sheet-lead) .sheet-body {
+      display: flex;
+      flex-direction: column-reverse;
     }
 
-    .how-list h3 {
+    .app-desc {
       margin: 0;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
+      max-width: 38rem;
+      text-wrap: pretty;
+    }
+
+    .verified {
+      display: grid;
+      grid-template-columns: 1.6rem 1fr;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0;
+      max-width: 38rem;
       font-weight: 600;
+      text-wrap: pretty;
+    }
+
+    .check {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-top: 0.05rem;
+      color: var(--red);
+    }
+
+    .check path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sheet-head .cell-meta {
+      flex: 1 1 100%;
+      border-left: 0;
+      border-top: 1px solid var(--rule-soft);
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-size: 0.9rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+    }
+
+    .link-cell {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 2.9rem;
+      padding: 0 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      background: var(--paper);
+      font-weight: 650;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .link-cell:hover {
+      background: var(--ink);
+      color: var(--on-ink);
+    }
+
+    /* Figures: screenshots mounted on the sheet */
+    .figure {
+      margin: 0;
+    }
+
+    .mount {
+      display: block;
+      padding: 0.5rem;
+      background: var(--mount);
+      border: 1px solid var(--rule-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .mount img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .phones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    @media (min-width: 860px) {
+      .phones {
+        gap: 1.5rem;
+      }
+
+      .phones .figure:last-child {
+        margin-top: 3rem;
+      }
+    }
+
+    .phones .mount img {
+      border-radius: 14px;
+    }
+
+    figcaption {
+      margin-top: 0.7rem;
+      font-stretch: 75%;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+
+    /* —— How I work: drawn as a branch that merges back —— */
+    .process-wrap {
+      position: relative;
+      margin-top: 2.5rem;
+    }
+
+    .process {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .process-line {
+      display: none;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 3.5rem;
+    }
+
+    /* Phone: the main line runs down the left, the branch steps out to node 2 and merges back at node 3. */
+    .process::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0.9rem;
+      bottom: 0;
+      border-left: 2px dotted var(--ink-2);
+    }
+
+    .process {
+      position: relative;
+    }
+
+    .seg {
+      position: absolute;
+      left: 0;
+      top: 0.9rem;
+      width: 42px;
+      height: calc(100% + 2rem);
+      overflow: visible;
+    }
+
+    .seg path {
+      fill: none;
+      stroke: var(--rule);
+      stroke-width: 2;
+    }
+
+    .step:nth-child(2) .node {
+      left: 24px;
+    }
+
+    .node {
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      border: 2px solid var(--rule);
+      border-radius: 50%;
+      background: var(--paper);
+    }
+
+    .step:nth-child(3) .node {
+      background: var(--ink);
+    }
+
+    .step h3 {
+      margin: 0;
+      font-stretch: 105%;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+      line-height: 1.15;
       letter-spacing: -0.02em;
     }
 
-    .how-list p {
-      margin: 0.4rem 0 0;
-      font-size: 0.95rem;
-      color: var(--muted);
+    .step p {
+      margin: 0.6rem 0 0;
+      max-width: 30rem;
+      text-wrap: pretty;
+    }
+
+    @media (min-width: 860px) {
+      .process {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        padding-top: 6.5rem;
+      }
+
+      .process-line {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+        overflow: visible;
+      }
+
+      .process-line path {
+        fill: none;
+        stroke: var(--rule);
+        stroke-width: 2;
+      }
+
+      .process-line .main {
+        stroke: var(--ink-2);
+        stroke-dasharray: 2 6;
+        stroke-width: 2;
+      }
+
+      .process {
+        grid-template-rows: auto auto;
+        row-gap: 0;
+      }
+
+      .step {
+        padding-left: 0;
+        display: grid;
+        grid-row: span 2;
+        grid-template-rows: subgrid;
+      }
+
+      .process::before,
+      .seg {
+        display: none;
+      }
+
+      .node {
+        top: auto;
+        left: calc(50% - 0.7rem);
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+
+      /* Line is 5rem tall: main at 64/80, branch at 20/80; steps start 6.5rem below. */
+      .step .node {
+        top: calc(-6.5rem + 4rem - 0.7rem);
+      }
+
+      .step:nth-child(2) .node {
+        top: calc(-6.5rem + 1.25rem - 0.7rem);
+        left: calc(50% - 0.7rem);
+      }
+
+      .step h3,
+      .step p {
+        text-align: center;
+        margin-inline: auto;
+      }
     }
 
     .how-more {
       display: inline-block;
-      margin-top: 1.5rem;
-      font-weight: 600;
+      text-wrap: balance;
+      margin-top: 2.5rem;
+      font-weight: 700;
+      text-decoration-thickness: 2px;
     }
 
-    /* —— Contact —— */
-    .contact-block {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
+    .how-more .glue {
+      white-space: nowrap;
+    }
+
+    .how-more .icon {
+      width: 1rem;
+      height: 1rem;
+      margin-left: 0.4rem;
+      vertical-align: -0.15em;
+    }
+
+    /* Pencil strokes draw once on entry */
+    .js .draw path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      transition: stroke-dashoffset 1.4s var(--ease);
+    }
+
+    .js .draw.is-drawn path {
+      stroke-dashoffset: 0;
+    }
+
+    .js .process-line .main {
+      stroke-dasharray: 2 6;
+      stroke-dashoffset: 0;
+    }
+
+    .js .check.draw path {
+      transition-duration: 0.7s;
+      transition-delay: 0.25s;
+    }
+
+    /* —— Contact sheet —— */
+    .contact-field {
+      margin-top: 2.5rem;
+      border: 2px solid var(--rule);
+      background: var(--paper);
     }
 
     .contact-mail {
-      font-size: 1.2rem;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: clamp(1.25rem, 4vw, 2rem) clamp(1rem, 3vw, 1.75rem);
+      font-stretch: 105%;
+      font-weight: 800;
+      font-size: clamp(1.3rem, 5.2vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
       text-decoration: none;
-      color: var(--ink);
       overflow-wrap: anywhere;
+      transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .contact-mail .icon {
+      width: clamp(1.4rem, 3vw, 2.2rem);
+      height: clamp(1.4rem, 3vw, 2.2rem);
+      transition: transform 0.3s var(--ease);
     }
 
     .contact-mail:hover {
-      color: var(--teal);
+      background: var(--ink);
+      color: var(--on-ink);
+    }
+
+    .contact-mail:hover .icon {
+      transform: translate(0.2rem, -0.2rem);
     }
 
     .socials {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
+      border-top: 1px solid var(--rule-soft);
     }
 
-    .social {
+    .socials a {
+      flex: 1;
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 0.85rem;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.5);
-      color: var(--ink);
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 3.25rem;
+      font-weight: 650;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
+      transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
     }
 
-    .social:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      transform: translateY(-2px);
+    .socials a + a {
+      border-left: 1px solid var(--rule-soft);
     }
 
-    /* —— Footer —— */
+    .socials a:hover {
+      background: var(--ink);
+      color: var(--on-ink);
+    }
+
+    /* —— Footer: bottom title block —— */
     .footer {
-      padding: 2rem 0 2.5rem;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.85rem;
+      margin-top: clamp(3.5rem, 8vw, 6rem);
+      border-top: 2px solid var(--rule);
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 0 1.5rem;
+      font-stretch: 75%;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+    }
+
+    .footer a {
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--ink);
+      text-decoration: underline;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -576,256 +1060,255 @@
         scroll-behavior: auto;
       }
 
-      .hero-brand,
-      .hero-role,
-      .hero-vision,
-      .hero-cta,
-      .js .reveal {
-        animation: none;
-        opacity: 1;
-        transform: none;
-        transition: none;
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+      }
+
+      .js .draw path {
+        stroke-dashoffset: 0;
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="wordmark" href="#top">Mert Lafcı</a>
-      <div class="topbar-right">
-        <nav class="nav" aria-label="Sections" data-i18n-aria="navAria">
-          <a href="#projects" data-i18n="navProjects">Projects</a>
-          <a href="#how" data-i18n="navHow">How I work</a>
-          <a href="#contact" data-i18n="navContact">Contact</a>
-        </nav>
-        <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="langAria">
-          <button type="button" id="lang-en" aria-pressed="true" data-lang="en">EN</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button type="button" id="lang-tr" aria-pressed="false" data-lang="tr">TR</button>
-        </div>
+  <header class="titleblock">
+    <div class="wrap tb-row">
+      <div class="tb-cell"><a class="wordmark" href="#top">Mert Lafcı</a></div>
+      <nav class="nav tb-cell" aria-label="Sections" data-i18n-aria="navAria">
+        <a href="#projects" data-i18n="navProjects">Projects</a>
+        <a href="#how" data-i18n="navHow">How I work</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="tb-cell lang-toggle" role="group" aria-label="Language" data-i18n-aria="langAria">
+        <button type="button" class="switch" aria-pressed="true" data-lang="en">EN</button>
+        <button type="button" class="switch" aria-pressed="false" data-lang="tr">TR</button>
+      </div>
+      <div class="tb-cell theme-cell">
+        <button type="button" class="switch theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero wrap" aria-labelledby="hero-brand">
-      <h1 class="hero-brand" id="hero-brand">Mert Lafcı</h1>
-      <p class="hero-role" data-i18n="role">Independent Developer</p>
-      <p class="hero-vision" data-i18n="vision">
-        I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">See my projects</a>
-        <a class="btn btn-ghost" href="https://github.com/SirReal7808" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <section class="opening wrap" aria-labelledby="name">
+      <h1 class="name" id="name">Mert Lafcı</h1>
+      <div>
+        <p class="role" data-i18n="role">Independent Developer</p>
+        <p class="vision" data-i18n="vision">I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">
+            <span data-i18n="ctaProjects">See my projects</span>
+            <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg>
+          </a>
+          <a class="btn btn-line" href="https://github.com/SirReal7808" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <ul class="index" aria-label="Projects" data-i18n-aria="navProjects">
+        <li>
+          <a href="#meridyen">
+            <img class="index-thumb" src="assets/meridyen-clients.jpg" width="600" height="1067" alt="" />
+            <span><span class="index-fig"><span data-i18n="fig">Fig.</span> 1 · <span lang="en">iOS · Android</span></span><span class="index-name">Meridyen Terapi Asistanı</span></span>
+            <svg class="index-arrow" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#hifi">
+            <img class="index-thumb hifi-shot" src="assets/hifi-companion-eq-light.jpg" width="1580" height="1374" alt="" />
+            <span><span class="index-fig"><span data-i18n="fig">Fig.</span> 2 · <span lang="en">macOS</span></span><span class="index-name">HiFi Companion</span></span>
+            <svg class="index-arrow" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#pocketpaste">
+            <img class="index-thumb" src="assets/pocketpaste-menu.jpg" width="1430" height="656" alt="" />
+            <span><span class="index-fig"><span data-i18n="fig">Fig.</span> 3 · <span lang="en">Android → Mac</span></span><span class="index-name">PocketPaste</span></span>
+            <svg class="index-arrow" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects" class="wrap" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 class="section-title" id="projects-title" data-i18n="projectsTitle">Projects</h2>
+        <p class="section-lead" data-i18n="projectsLead">One app on the App Store and Google Play, and two open-source tools for the Mac.</p>
+      </div>
+
+      <div class="sheets">
+        <!-- Meridyen Terapi Asistanı -->
+        <article class="sheet sheet-lead" id="meridyen" aria-labelledby="meridyen-name">
+          <div class="sheet-head">
+            <h3 class="app-name" id="meridyen-name">Meridyen Terapi Asistanı</h3>
+            <p class="cell" lang="en">iOS · Android</p>
+            <p class="cell cell-status" data-i18n="meridyenStatus">Live in Turkey</p>
+            <p class="cell cell-stack" lang="en">Expo / React Native · TypeScript · Supabase&nbsp;·&nbsp;RevenueCat</p>
+            <p class="cell cell-meta" data-i18n="meridyenMeta">Product owner · Started July 2026 · Paid version since November 2026</p>
+          </div>
+          <div class="sheet-body">
+            <div>
+              <p class="app-desc" data-i18n="meridyenDesc">A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.</p>
+              <p class="verified">
+                <svg class="check draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3.5 13.5c2 1.2 3.6 3 4.8 5.2C11 12.5 15.5 7.5 21 4.5"/></svg>
+                <span data-i18n="meridyenDetail">Every therapist sees only their own client data. This is enforced by row-level security in the database, not just by the app.</span>
+              </p>
+              <div class="links">
+                <a class="link-cell" href="https://apps.apple.com/tr/app/meridyen-terapi-asistan%C4%B1/id6805550159?l=tr" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  <span>App Store</span>
+                </a>
+                <a class="link-cell" href="https://play.google.com/store/apps/details?id=com.meridyen.terapiasistani" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3.18 2.25a1.1 1.1 0 0 0-.18.58v18.34c0 .22.06.42.18.58l.05.05 10.2-10.2v-.25L3.23 2.2l-.05.05zm11.02 6.36-2.3 2.3 2.3 2.3 5.42-3.09c.57-.32.57-.85 0-1.18l-5.42-3.33zm-3.2 3.2L3.7 20.01c.2.2.5.24.82.05l11.13-6.35-4.65-4.9zm0-1.42 4.65-4.9L4.52 2.14c-.32-.19-.62-.15-.82.05l.06.06 7.24 8.14z"/></svg>
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+            <div class="phones">
+              <figure class="figure">
+                <span class="mount"><img src="assets/meridyen-clients.jpg" width="600" height="1067" loading="lazy" alt="Meridyen client list with sample clients, search and new appointment buttons" data-i18n-alt="meridyenAlt1" /></span>
+                <figcaption><span data-i18n="fig">Fig.</span> 1.1</figcaption>
+              </figure>
+              <figure class="figure">
+                <span class="mount"><img src="assets/meridyen-calendar.jpg" width="600" height="1067" loading="lazy" alt="Meridyen session calendar for a month, with the day's sample appointment below" data-i18n-alt="meridyenAlt2" /></span>
+                <figcaption><span data-i18n="fig">Fig.</span> 1.2</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- HiFi Companion -->
+        <article class="sheet" id="hifi" aria-labelledby="hifi-name">
+          <div class="sheet-head">
+            <h3 class="app-name" id="hifi-name">HiFi Companion</h3>
+            <p class="cell" lang="en">macOS</p>
+            <p class="cell cell-status" data-i18n="openSource">Open source</p>
+            <p class="cell cell-stack" lang="en">Swift · Core Audio · Sparkle</p>
+          </div>
+          <div class="sheet-body">
+            <div>
+              <p class="app-desc" data-i18n="hifiDesc">A menu-bar companion for listening to music on the Mac: system-wide parametric EQ through a Core Audio process tap, output sample-rate and bit-depth matching for Apple Music, and a sine sweep for finding peaks by ear. Works with built-in and external DACs.</p>
+              <p class="verified">
+                <svg class="check draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3.5 13.5c2 1.2 3.6 3 4.8 5.2C11 12.5 15.5 7.5 21 4.5"/></svg>
+                <span data-i18n="hifiDetail">With the EQ flat, the audio path is bit-exact, verified with a sample-by-sample null test.</span>
+              </p>
+              <div class="links">
+                <a class="link-cell" href="https://github.com/SirReal7808/hifi-companion" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg>
+                  <span>GitHub</span>
+                </a>
+                <a class="link-cell" href="https://github.com/SirReal7808/hifi-companion/releases/latest" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+                  <span data-i18n="downloadDmg">Download (.dmg)</span>
+                </a>
+              </div>
+            </div>
+            <figure class="figure">
+              <span class="mount">
+                <picture>
+                  <source id="hifi-dark-source" media="(prefers-color-scheme: dark)" srcset="assets/hifi-companion-eq-dark.jpg" />
+                  <img class="hifi-shot" src="assets/hifi-companion-eq-light.jpg" width="1580" height="1374" loading="lazy" alt="HiFi Companion EQ window with five parametric bands on a frequency graph" data-i18n-alt="hifiAlt" />
+                </picture>
+              </span>
+              <figcaption><span data-i18n="fig">Fig.</span> 2.1</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- PocketPaste -->
+        <article class="sheet" id="pocketpaste" aria-labelledby="pocketpaste-name">
+          <div class="sheet-head">
+            <h3 class="app-name" id="pocketpaste-name">PocketPaste</h3>
+            <p class="cell" lang="en">Android → Mac</p>
+            <p class="cell cell-status" data-i18n="openSource">Open source</p>
+            <p class="cell cell-stack" lang="en">Swift · Kotlin</p>
+          </div>
+          <div class="sheet-body">
+            <div>
+              <p class="app-desc" data-i18n="pocketDesc">Share text or an image on Android, click it in the Mac's menu bar, and it's on the clipboard. Local Wi-Fi only: no account, no cloud.</p>
+              <p class="verified">
+                <svg class="check draw" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3.5 13.5c2 1.2 3.6 3 4.8 5.2C11 12.5 15.5 7.5 21 4.5"/></svg>
+                <span data-i18n="pocketDetail">Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.</span>
+              </p>
+              <div class="links">
+                <a class="link-cell" href="https://github.com/SirReal7808/pocketpaste" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg>
+                  <span>GitHub</span>
+                </a>
+                <a class="link-cell" href="https://github.com/SirReal7808/pocketpaste/releases/latest" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+                  <span data-i18n="download">Download</span>
+                </a>
+              </div>
+            </div>
+            <figure class="figure">
+              <span class="mount"><img src="assets/pocketpaste-menu.jpg" width="1430" height="656" loading="lazy" alt="PocketPaste menu on the Mac, listing texts and images sent from the phone" data-i18n-alt="pocketAlt" /></span>
+              <figcaption><span data-i18n="fig">Fig.</span> 3.1</figcaption>
+            </figure>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="wrap reveal" aria-labelledby="projects-title">
-      <p class="section-label" data-i18n="projectsLabel">Portfolio</p>
-      <h2 class="section-title" id="projects-title" data-i18n="projectsTitle">Projects</h2>
-      <p class="section-lead" data-i18n="projectsLead">
-        One app on the App Store and Google Play, and two open-source tools for the Mac.
-      </p>
-
-      <!-- Meridyen Terapi Asistanı -->
-      <article class="app-block has-shot" aria-labelledby="meridyen-name">
-        <div>
-          <ul class="app-tags">
-            <li class="tag">iOS · Android</li>
-            <li class="tag" data-i18n="meridyenStatus">Live in Turkey</li>
-          </ul>
-          <h3 class="app-name" id="meridyen-name">Meridyen Terapi Asistanı</h3>
-          <p class="app-desc" data-i18n="meridyenDesc">
-            A mobile CRM for meridian therapists: clients, session packages, appointments, an FAQ knowledge base, product stock and announcements. Subscription-based, on the App Store and Google Play in Turkey.
-          </p>
-          <p class="app-detail" data-i18n="meridyenDetail">
-            Every therapist sees only their own client data. This is enforced by row-level security in the database, not just by the app.
-          </p>
-          <p class="app-meta" data-i18n="meridyenMeta">Product owner · Started July 2026 · Paid version since November 2026</p>
-          <p class="app-tech">Expo / React Native · TypeScript · Supabase · RevenueCat</p>
-          <div class="store-links">
-            <a
-              class="store-link"
-              href="https://apps.apple.com/tr/app/meridyen-terapi-asistan%C4%B1/id6805550159?l=tr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-              </svg>
-              <span>App Store</span>
-            </a>
-            <a
-              class="store-link"
-              href="https://play.google.com/store/apps/details?id=com.meridyen.terapiasistani"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M3.18 2.25a1.1 1.1 0 0 0-.18.58v18.34c0 .22.06.42.18.58l.05.05 10.2-10.2v-.25L3.23 2.2l-.05.05zm11.02 6.36-2.3 2.3 2.3 2.3 5.42-3.09c.57-.32.57-.85 0-1.18l-5.42-3.33zm-3.2 3.2L3.7 20.01c.2.2.5.24.82.05l11.13-6.35-4.65-4.9zm0-1.42 4.65-4.9L4.52 2.14c-.32-.19-.62-.15-.82.05l.06.06 7.24 8.14z"/>
-              </svg>
-              <span>Google Play</span>
-            </a>
-          </div>
-        </div>
-        <figure class="app-shot app-shot-phones">
-          <img
-            src="assets/meridyen-clients.jpg"
-            width="600"
-            height="1067"
-            loading="lazy"
-            alt="Meridyen client list with sample clients, search and new appointment buttons"
-            data-i18n-alt="meridyenAlt1"
-          />
-          <img
-            src="assets/meridyen-calendar.jpg"
-            width="600"
-            height="1067"
-            loading="lazy"
-            alt="Meridyen session calendar for a month, with the day's sample appointment below"
-            data-i18n-alt="meridyenAlt2"
-          />
-        </figure>
-      </article>
-
-      <!-- HiFi Companion -->
-      <article class="app-block has-shot" aria-labelledby="hifi-name">
-        <div>
-          <ul class="app-tags">
-            <li class="tag">macOS</li>
-            <li class="tag" data-i18n="openSource">Open source</li>
-          </ul>
-          <h3 class="app-name" id="hifi-name">HiFi Companion</h3>
-          <p class="app-desc" data-i18n="hifiDesc">
-            A menu-bar companion for listening to music on the Mac: system-wide parametric EQ through a Core Audio process tap, output sample-rate and bit-depth matching for Apple Music, and a sine sweep for finding peaks by ear. Works with built-in and external DACs.
-          </p>
-          <p class="app-detail" data-i18n="hifiDetail">
-            With the EQ flat, the audio path is bit-exact, verified with a sample-by-sample null test.
-          </p>
-          <p class="app-tech">Swift · Core Audio · Sparkle</p>
-          <div class="store-links">
-            <a class="store-link" href="https://github.com/SirReal7808/hifi-companion" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
-              </svg>
-              <span>GitHub</span>
-            </a>
-            <a class="store-link" href="https://github.com/SirReal7808/hifi-companion/releases/latest" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/>
-              </svg>
-              <span data-i18n="downloadDmg">Download (.dmg)</span>
-            </a>
-          </div>
-        </div>
-        <figure class="app-shot">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="assets/hifi-companion-eq-dark.jpg" />
-            <img
-              src="assets/hifi-companion-eq-light.jpg"
-              width="1580"
-              height="1374"
-              loading="lazy"
-              alt="HiFi Companion EQ window with five parametric bands on a frequency graph"
-              data-i18n-alt="hifiAlt"
-            />
-          </picture>
-        </figure>
-      </article>
-
-      <!-- PocketPaste -->
-      <article class="app-block has-shot" aria-labelledby="pocketpaste-name">
-        <div>
-          <ul class="app-tags">
-            <li class="tag">Android → Mac</li>
-            <li class="tag" data-i18n="openSource">Open source</li>
-          </ul>
-          <h3 class="app-name" id="pocketpaste-name">PocketPaste</h3>
-          <p class="app-desc" data-i18n="pocketDesc">
-            Share text or an image on Android, click it in the Mac's menu bar, and it's on the clipboard. Local Wi-Fi only: no account, no cloud.
-          </p>
-          <p class="app-detail" data-i18n="pocketDetail">
-            Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.
-          </p>
-          <p class="app-tech">Swift · Kotlin</p>
-          <div class="store-links">
-            <a class="store-link" href="https://github.com/SirReal7808/pocketpaste" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
-              </svg>
-              <span>GitHub</span>
-            </a>
-            <a class="store-link" href="https://github.com/SirReal7808/pocketpaste/releases/latest" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16"/>
-              </svg>
-              <span data-i18n="download">Download</span>
-            </a>
-          </div>
-        </div>
-        <figure class="app-shot">
-          <img
-            src="assets/pocketpaste-menu.jpg"
-            width="1430"
-            height="656"
-            loading="lazy"
-            alt="PocketPaste menu on the Mac, listing texts and images sent from the phone"
-            data-i18n-alt="pocketAlt"
-          />
-        </figure>
-      </article>
-    </section>
-
-    <section id="how" class="wrap reveal" aria-labelledby="how-title">
-      <p class="section-label" data-i18n="howLabel">Process</p>
-      <h2 class="section-title" id="how-title" data-i18n="howTitle">How I work</h2>
-      <ul class="how-list">
-        <li>
+    <section id="how" class="wrap" aria-labelledby="how-title">
+      <div class="section-head">
+        <h2 class="section-title" id="how-title" data-i18n="howTitle">How I work</h2>
+      </div>
+      <div class="process-wrap">
+        <svg class="process-line draw" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true">
+          <path class="main" d="M0 64H1000" />
+          <path pathLength="1" d="M153 64C240 64 270 20 350 20H650C730 20 760 64 847 64" />
+        </svg>
+      <ol class="process">
+        <li class="step">
+          <svg class="seg draw" viewBox="0 0 42 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M9 0C9 45 33 35 33 80V100" /></svg>
+          <span class="node" aria-hidden="true"></span>
           <h3 data-i18n="how1Title">I own the product</h3>
           <p data-i18n="how1Desc">Scope, decisions, testing on real devices and every release go through me.</p>
         </li>
-        <li>
+        <li class="step">
+          <svg class="seg draw" viewBox="0 0 42 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M33 0V20C33 65 9 55 9 100" /></svg>
+          <span class="node" aria-hidden="true"></span>
           <h3 data-i18n="how2Title">AI writes most of the code</h3>
           <p data-i18n="how2Desc">Claude Code agents do the implementation. Every change gets its own branch and pull request, passes CI tests, and risky changes get a review agent.</p>
         </li>
-        <li>
+        <li class="step">
+          <span class="node" aria-hidden="true"></span>
           <h3 data-i18n="how3Title">Repos that explain themselves</h3>
           <p data-i18n="how3Desc">Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.</p>
         </li>
-      </ul>
-      <a class="how-more" href="https://github.com/SirReal7808/hifi-companion#built-with-ai-agents" target="_blank" rel="noopener noreferrer" data-i18n="howMore">See the setup in the HiFi Companion repo →</a>
+      </ol>
+      </div>
+      <a class="how-more" href="https://github.com/SirReal7808/hifi-companion#built-with-ai-agents" target="_blank" rel="noopener noreferrer">
+        <span data-i18n="howMore">See the setup in the HiFi Companion</span> <span class="glue"><span data-i18n="howMoreLast">repo</span><svg class="icon" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg></span>
+      </a>
     </section>
 
-    <section id="contact" class="wrap reveal" aria-labelledby="contact-title">
-      <p class="section-label" data-i18n="contactLabel">Contact</p>
-      <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Get in touch</h2>
-      <p class="section-lead" data-i18n="contactLead">
-        Questions, bug reports or ideas about any of these apps? Write to me.
-      </p>
-      <div class="contact-block">
-        <a class="contact-mail" href="mailto:lafcimert@gmail.com">lafcimert@gmail.com</a>
+    <section id="contact" class="wrap" aria-labelledby="contact-title">
+      <div class="section-head">
+        <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Get in touch</h2>
+        <p class="section-lead" data-i18n="contactLead">Questions, bug reports or ideas about any of these apps? Write to me.</p>
+      </div>
+      <div class="contact-field">
+        <a class="contact-mail" href="mailto:lafcimert@gmail.com">
+          <span>lafcimert@gmail.com</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M8 6h10v10"/></svg>
+        </a>
         <div class="socials">
-          <a
-            class="social"
-            href="https://github.com/SirReal7808"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/>
-            </svg>
+          <a href="https://github.com/SirReal7808" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg>
             <span>GitHub</span>
           </a>
-          <a
-            class="social"
-            href="https://www.linkedin.com/in/mertlafci"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/>
-            </svg>
+          <a href="https://www.linkedin.com/in/mertlafci" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
             <span>LinkedIn</span>
           </a>
         </div>
@@ -834,7 +1317,10 @@
   </main>
 
   <footer class="footer">
-    <div class="wrap">© 2026 Mert Lafcı</div>
+    <div class="wrap">
+      <span>© 2026 Mert Lafcı</span>
+      <a href="#top">mertlafci.com</a>
+    </div>
   </footer>
 
   <script>
@@ -845,12 +1331,14 @@
         navContact: "Contact",
         navAria: "Sections",
         langAria: "Language",
+        themeToDark: "Switch to dark theme",
+        themeToLight: "Switch to light theme",
         pageTitle: "Mert Lafcı · Independent Developer",
         role: "Independent Developer",
         vision:
           "I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.",
         ctaProjects: "See my projects",
-        projectsLabel: "Portfolio",
+        fig: "Fig.",
         projectsTitle: "Projects",
         projectsLead: "One app on the App Store and Google Play, and two open-source tools for the Mac.",
         meridyenStatus: "Live in Turkey",
@@ -873,7 +1361,6 @@
           "Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.",
         pocketAlt: "PocketPaste menu on the Mac, listing texts and images sent from the phone",
         download: "Download",
-        howLabel: "Process",
         howTitle: "How I work",
         how1Title: "I own the product",
         how1Desc: "Scope, decisions, testing on real devices and every release go through me.",
@@ -883,8 +1370,8 @@
         how3Title: "Repos that explain themselves",
         how3Desc:
           "Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.",
-        howMore: "See the setup in the HiFi Companion repo →",
-        contactLabel: "Contact",
+        howMore: "See the setup in the HiFi Companion",
+        howMoreLast: "repo",
         contactTitle: "Get in touch",
         contactLead: "Questions, bug reports or ideas about any of these apps? Write to me.",
       },
@@ -894,12 +1381,14 @@
         navContact: "İletişim",
         navAria: "Bölümler",
         langAria: "Dil",
+        themeToDark: "Koyu temaya geç",
+        themeToLight: "Açık temaya geç",
         pageTitle: "Mert Lafcı · Bağımsız Geliştirici",
         role: "Bağımsız Geliştirici",
         vision:
           "Karşılaştığım sorunlar için küçük, odaklı uygulamalar yapıyorum: meridyen terapistleri için bir CRM, Mac'te müzik dinlerken sistem genelinde çalışan bir EQ, telefondan Mac'e hızlıca bir şey göndermenin yolu. Her birinde kapsamdan yayına kadar ürün bende; AI ajanlarıyla, test edilen ve incelenen bir akışla geliştiriyorum.",
         ctaProjects: "Projelerime bak",
-        projectsLabel: "Portfolyo",
+        fig: "Şekil",
         projectsTitle: "Projeler",
         projectsLead: "App Store ve Google Play'de bir mobil uygulama, Mac için iki açık kaynak araç.",
         meridyenStatus: "Türkiye'de yayında",
@@ -922,7 +1411,6 @@
           "Her istek, yalnızca eşleştirme QR kodunun içinde taşınan bir anahtarla AES-256-GCM ile şifrelenir.",
         pocketAlt: "Mac'te PocketPaste menüsü: telefondan gönderilen metin ve görsellerin listesi",
         download: "İndir",
-        howLabel: "Süreç",
         howTitle: "Nasıl çalışıyorum",
         how1Title: "Ürün bende",
         how1Desc: "Kapsam, kararlar, gerçek cihazda testler ve her yayın benden geçer.",
@@ -932,56 +1420,90 @@
         how3Title: "Kendini anlatan repolar",
         how3Desc:
           "Her repo durumunu, çalışma kurallarını ve bilinen tuzakları yazılı tutar; bir sonraki oturum kaldığı yerden devam eder.",
-        howMore: "Kurulumu HiFi Companion reposunda gör →",
-        contactLabel: "İletişim",
+        howMore: "Kurulumu HiFi Companion reposunda",
+        howMoreLast: "gör",
         contactTitle: "İletişime geç",
         contactLead: "Bu uygulamalarla ilgili bir sorun, soru ya da fikrin varsa yaz.",
       },
     };
 
-    const STORAGE_KEY = "mertlafci-lang";
+    const root = document.documentElement;
+    const LANG_KEY = "mertlafci-lang";
+    const THEME_KEY = "mertlafci-theme";
+    const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    let currentLang = "en";
 
-    function applyLang(lang) {
-      const dict = i18n[lang] || i18n.en;
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (key && dict[key] != null) {
-          el.textContent = dict[key];
-        }
-      });
-      document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-alt");
-        if (key && dict[key] != null) {
-          el.setAttribute("alt", dict[key]);
-        }
-      });
-      document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
-        const key = el.getAttribute("data-i18n-aria");
-        if (key && dict[key] != null) {
-          el.setAttribute("aria-label", dict[key]);
-        }
-      });
-      if (dict.pageTitle) document.title = dict.pageTitle;
-      document.querySelectorAll(".lang-toggle button").forEach((btn) => {
-        btn.setAttribute("aria-pressed", String(btn.dataset.lang === lang));
-      });
+    function store(key, value) {
       try {
-        localStorage.setItem(STORAGE_KEY, lang);
+        localStorage.setItem(key, value);
       } catch (_) {
         /* ignore */
       }
     }
 
+    /* —— Theme —— */
+    function effectiveTheme() {
+      const pinned = root.getAttribute("data-theme");
+      if (pinned === "light" || pinned === "dark") return pinned;
+      return darkQuery.matches ? "dark" : "light";
+    }
+
+    function syncTheme() {
+      const theme = effectiveTheme();
+      root.setAttribute("data-theme-effective", theme);
+      const dict = i18n[currentLang];
+      const btn = document.getElementById("theme-toggle");
+      btn.setAttribute("aria-label", theme === "dark" ? dict.themeToLight : dict.themeToDark);
+      // The HiFi screenshot follows the page theme, not only the system setting.
+      const src = document.getElementById("hifi-dark-source");
+      if (src) src.media = theme === "dark" ? "all" : "not all";
+      document.querySelectorAll("img.index-thumb.hifi-shot").forEach((img) => {
+        img.src = theme === "dark" ? "assets/hifi-companion-eq-dark.jpg" : "assets/hifi-companion-eq-light.jpg";
+      });
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      const next = effectiveTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      store(THEME_KEY, next);
+      syncTheme();
+    });
+
+    darkQuery.addEventListener("change", syncTheme);
+
+    /* —— Language —— */
+    function applyLang(lang) {
+      const dict = i18n[lang] || i18n.en;
+      currentLang = i18n[lang] ? lang : "en";
+      root.lang = currentLang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key && dict[key] != null) el.textContent = dict[key];
+      });
+      document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-alt");
+        if (key && dict[key] != null) el.setAttribute("alt", dict[key]);
+      });
+      document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-aria");
+        if (key && dict[key] != null) el.setAttribute("aria-label", dict[key]);
+      });
+      if (dict.pageTitle) document.title = dict.pageTitle;
+      document.querySelectorAll(".lang-toggle .switch").forEach((btn) => {
+        btn.setAttribute("aria-pressed", String(btn.dataset.lang === currentLang));
+      });
+      store(LANG_KEY, currentLang);
+      syncTheme();
+    }
+
     function initLang() {
       let lang = "en";
       try {
-        const params = new URLSearchParams(window.location.search);
-        const fromQuery = params.get("lang");
+        const fromQuery = new URLSearchParams(window.location.search).get("lang");
         if (fromQuery === "en" || fromQuery === "tr") {
           lang = fromQuery;
         } else {
-          const saved = localStorage.getItem(STORAGE_KEY);
+          const saved = localStorage.getItem(LANG_KEY);
           if (saved === "en" || saved === "tr") {
             lang = saved;
           } else {
@@ -995,26 +1517,45 @@
       applyLang(lang);
     }
 
-    document.querySelectorAll(".lang-toggle button").forEach((btn) => {
+    document.querySelectorAll(".lang-toggle .switch").forEach((btn) => {
       btn.addEventListener("click", () => applyLang(btn.dataset.lang));
     });
 
-    const revealEls = document.querySelectorAll(".reveal");
+    /* —— Pencil strokes draw once when they enter the view —— */
+    const strokes = document.querySelectorAll(".draw");
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
+              entry.target.classList.add("is-drawn");
               io.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+        { threshold: 0.6 }
       );
-      revealEls.forEach((el) => io.observe(el));
+      strokes.forEach((el) => io.observe(el));
     } else {
-      revealEls.forEach((el) => el.classList.add("is-visible"));
+      strokes.forEach((el) => el.classList.add("is-drawn"));
+    }
+
+    /* —— Mark the section in view in the title block —— */
+    const navLinks = document.querySelectorAll(".nav a");
+    if ("IntersectionObserver" in window) {
+      const sectionIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach((a) => {
+              if (a.getAttribute("href") === "#" + entry.target.id) a.setAttribute("aria-current", "true");
+              else a.removeAttribute("aria-current");
+            });
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px" }
+      );
+      document.querySelectorAll("main > section[id], .opening").forEach((s) => sectionIo.observe(s));
     }
 
     initLang();
