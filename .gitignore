@@ -1,0 +1,7 @@
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Impeccable local and runtime state
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/critique/
