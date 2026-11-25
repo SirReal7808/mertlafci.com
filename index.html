@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mert Lafcı, independent developer. Meridyen Terapi Asistanı on iOS and Android, plus two open-source Mac tools: HiFi Companion and PocketPaste." />
-  <title>Mert Lafcı · Independent Developer</title>
+  <meta name="description" content="Mert Lafcı. Meridyen Terapi Asistanı on iOS and Android, plus two open-source Mac tools: HiFi Companion and PocketPaste." />
+  <title>Mert Lafcı</title>
   <link rel="canonical" href="https://mertlafci.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mertlafci.com/" />
-  <meta property="og:title" content="Mert Lafcı · Independent Developer" />
+  <meta property="og:title" content="Mert Lafcı" />
   <meta property="og:description" content="Small, focused apps: Meridyen Terapi Asistanı on iOS and Android, plus HiFi Companion and PocketPaste, open source on GitHub." />
   <meta property="og:image" content="https://mertlafci.com/assets/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -223,18 +223,6 @@
       opacity: 0;
       transform: translateY(14px);
       animation: rise 0.9s var(--ease) 0.08s forwards;
-    }
-
-    .hero-role {
-      margin: 1rem 0 0;
-      font-family: var(--font-display);
-      font-weight: 500;
-      font-size: clamp(1.25rem, 3.2vw, 1.65rem);
-      letter-spacing: -0.02em;
-      color: var(--teal);
-      opacity: 0;
-      transform: translateY(12px);
-      animation: rise 0.9s var(--ease) 0.22s forwards;
     }
 
     .hero-vision {
@@ -476,47 +464,6 @@
       flex-shrink: 0;
     }
 
-    /* —— How I work —— */
-    .how-list {
-      list-style: none;
-      margin: 1.75rem 0 0;
-      padding: 0;
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .how-list {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.25rem;
-      }
-    }
-
-    .how-list li {
-      padding-top: 0.85rem;
-      border-top: 2px solid var(--teal-soft);
-    }
-
-    .how-list h3 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .how-list p {
-      margin: 0.4rem 0 0;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .how-more {
-      display: inline-block;
-      margin-top: 1.5rem;
-      font-weight: 600;
-    }
-
     /* —— Contact —— */
     .contact-block {
       margin-top: 1.5rem;
@@ -577,7 +524,6 @@
       }
 
       .hero-brand,
-      .hero-role,
       .hero-vision,
       .hero-cta,
       .js .reveal {
@@ -596,7 +542,6 @@
       <div class="topbar-right">
         <nav class="nav" aria-label="Sections" data-i18n-aria="navAria">
           <a href="#projects" data-i18n="navProjects">Projects</a>
-          <a href="#how" data-i18n="navHow">How I work</a>
           <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
         <div class="lang-toggle" role="group" aria-label="Language" data-i18n-aria="langAria">
@@ -611,9 +556,8 @@
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-brand">
       <h1 class="hero-brand" id="hero-brand">Mert Lafcı</h1>
-      <p class="hero-role" data-i18n="role">Independent Developer</p>
       <p class="hero-vision" data-i18n="vision">
-        I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.
+        When I see a need, I build an app for it. Right now there are three: a mobile app for meridian therapists and two small tools for the Mac.
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#projects" data-i18n="ctaProjects">See my projects</a>
@@ -777,26 +721,6 @@
       </article>
     </section>
 
-    <section id="how" class="wrap reveal" aria-labelledby="how-title">
-      <p class="section-label" data-i18n="howLabel">Process</p>
-      <h2 class="section-title" id="how-title" data-i18n="howTitle">How I work</h2>
-      <ul class="how-list">
-        <li>
-          <h3 data-i18n="how1Title">I own the product</h3>
-          <p data-i18n="how1Desc">Scope, decisions, testing on real devices and every release go through me.</p>
-        </li>
-        <li>
-          <h3 data-i18n="how2Title">AI writes most of the code</h3>
-          <p data-i18n="how2Desc">Claude Code agents do the implementation. Every change gets its own branch and pull request, passes CI tests, and risky changes get a review agent.</p>
-        </li>
-        <li>
-          <h3 data-i18n="how3Title">Repos that explain themselves</h3>
-          <p data-i18n="how3Desc">Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.</p>
-        </li>
-      </ul>
-      <a class="how-more" href="https://github.com/SirReal7808/hifi-companion#built-with-ai-agents" target="_blank" rel="noopener noreferrer" data-i18n="howMore">See the setup in the HiFi Companion repo →</a>
-    </section>
-
     <section id="contact" class="wrap reveal" aria-labelledby="contact-title">
       <p class="section-label" data-i18n="contactLabel">Contact</p>
       <h2 class="section-title" id="contact-title" data-i18n="contactTitle">Get in touch</h2>
@@ -841,14 +765,12 @@
     const i18n = {
       en: {
         navProjects: "Projects",
-        navHow: "How I work",
         navContact: "Contact",
         navAria: "Sections",
         langAria: "Language",
-        pageTitle: "Mert Lafcı · Independent Developer",
-        role: "Independent Developer",
+        pageTitle: "Mert Lafcı",
         vision:
-          "I build small, focused apps for problems I run into: a CRM for meridian therapists, a system-wide EQ for listening on the Mac, a quick way to get things from my phone to my Mac. I own each one from scope to release and build them with AI agents in a tested, reviewed workflow.",
+          "When I see a need, I build an app for it. Right now there are three: a mobile app for meridian therapists and two small tools for the Mac.",
         ctaProjects: "See my projects",
         projectsLabel: "Portfolio",
         projectsTitle: "Projects",
@@ -873,31 +795,18 @@
           "Every request is encrypted with AES-256-GCM, using a key that only travels inside the pairing QR code.",
         pocketAlt: "PocketPaste menu on the Mac, listing texts and images sent from the phone",
         download: "Download",
-        howLabel: "Process",
-        howTitle: "How I work",
-        how1Title: "I own the product",
-        how1Desc: "Scope, decisions, testing on real devices and every release go through me.",
-        how2Title: "AI writes most of the code",
-        how2Desc:
-          "Claude Code agents do the implementation. Every change gets its own branch and pull request, passes CI tests, and risky changes get a review agent.",
-        how3Title: "Repos that explain themselves",
-        how3Desc:
-          "Each repo keeps its status, working agreement and known pitfalls in writing, so the next session picks up where the last one stopped.",
-        howMore: "See the setup in the HiFi Companion repo →",
         contactLabel: "Contact",
         contactTitle: "Get in touch",
         contactLead: "Questions, bug reports or ideas about any of these apps? Write to me.",
       },
       tr: {
         navProjects: "Projeler",
-        navHow: "Nasıl çalışıyorum",
         navContact: "İletişim",
         navAria: "Bölümler",
         langAria: "Dil",
-        pageTitle: "Mert Lafcı · Bağımsız Geliştirici",
-        role: "Bağımsız Geliştirici",
+        pageTitle: "Mert Lafcı",
         vision:
-          "Karşılaştığım sorunlar için küçük, odaklı uygulamalar yapıyorum: meridyen terapistleri için bir CRM, Mac'te müzik dinlerken sistem genelinde çalışan bir EQ, telefondan Mac'e hızlıca bir şey göndermenin yolu. Her birinde kapsamdan yayına kadar ürün bende; AI ajanlarıyla, test edilen ve incelenen bir akışla geliştiriyorum.",
+          "Bir ihtiyaç görünce onun için uygulama yapıyorum. Şu an üç projem var: meridyen terapistleri için bir mobil uygulama ve Mac için iki küçük araç.",
         ctaProjects: "Projelerime bak",
         projectsLabel: "Portfolyo",
         projectsTitle: "Projeler",
@@ -922,17 +831,6 @@
           "Her istek, yalnızca eşleştirme QR kodunun içinde taşınan bir anahtarla AES-256-GCM ile şifrelenir.",
         pocketAlt: "Mac'te PocketPaste menüsü: telefondan gönderilen metin ve görsellerin listesi",
         download: "İndir",
-        howLabel: "Süreç",
-        howTitle: "Nasıl çalışıyorum",
-        how1Title: "Ürün bende",
-        how1Desc: "Kapsam, kararlar, gerçek cihazda testler ve her yayın benden geçer.",
-        how2Title: "Kodun çoğunu AI yazar",
-        how2Desc:
-          "Uygulamayı Claude Code ajanları yazar. Her değişiklik kendi dalında ve pull request'inde ilerler, CI testlerinden geçer; riskli değişikliklere bir inceleme ajanı bakar.",
-        how3Title: "Kendini anlatan repolar",
-        how3Desc:
-          "Her repo durumunu, çalışma kurallarını ve bilinen tuzakları yazılı tutar; bir sonraki oturum kaldığı yerden devam eder.",
-        howMore: "Kurulumu HiFi Companion reposunda gör →",
         contactLabel: "İletişim",
         contactTitle: "İletişime geç",
         contactLead: "Bu uygulamalarla ilgili bir sorun, soru ya da fikrin varsa yaz.",
